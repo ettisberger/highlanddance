@@ -1,0 +1,13 @@
+{
+    "MAIL": {
+        "USER": "test@test.ch",
+        "PW": "test",
+        "SMTP": "rubin.metanet.ch",
+        "PORT": "465"
+    },
+    "USE_SSL": false,
+    "APP": {
+        "TITLE": "Swords and Spirits LOCAL",
+        "BASE_URL": "http://localhost:8080"
+    }
+}
