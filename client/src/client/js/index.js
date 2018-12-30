@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import App from './App';
 import highlanddanceTheme from './theme';

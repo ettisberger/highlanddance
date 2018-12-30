@@ -1,0 +1,12 @@
+/*
+    ./.babelrc
+*/
+{
+  "presets":[
+    "env", "react"
+  ],
+  "plugins": [
+    "transform-object-rest-spread", //restspread -> const {a, b, ...rest} = this.props
+    "transform-class-properties"
+  ]
+}
