@@ -18,7 +18,7 @@ const PageHeaderWrapper = styled.header`
 const PageHeaderTitle = styled.h1`
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 3rem;
+    font-size: 4rem;
     color: ${whiteColor};
 `;
 
