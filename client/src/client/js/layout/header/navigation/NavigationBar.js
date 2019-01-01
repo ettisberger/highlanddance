@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid/Grid';
 import styled from 'styled-components';
-import {linkColor} from '../../../theme';
+import {brandPrimary, linkColor} from '../../../theme';
 
 const NavItem = styled.div`
-  color: ${linkColor};
-  font-size: 18px;
+  color: ${brandPrimary};
+  font-size: 14px;
   text-align: center;
   
   && {
     a {
       position: relative;
-      color: ${linkColor};
+      color: ${brandPrimary};
       text-decoration: none;
     }
   
@@ -20,7 +20,7 @@ const NavItem = styled.div`
     }
     
     a:visited {
-      color: ${linkColor};
+      color: ${brandPrimary};
     }
     
     a:before {
@@ -30,7 +30,7 @@ const NavItem = styled.div`
       height: 2px;
       bottom: -10px;
       left: 0;
-      background-color: ${linkColor};
+      background-color: ${brandPrimary};
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.3s ease-in-out 0s;
@@ -49,6 +49,15 @@ class NavigationBar extends Component {
                 <Grid component={'nav'} container item xs={8} justify={'flex-end'} alignItems={'center'}>
                     <Grid item xs={3}>
                         <NavItem><Link to={''}>HOME</Link></NavItem>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <NavItem><Link to={''}>ABOUT</Link></NavItem>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <NavItem><Link to={''}>CLASSES</Link></NavItem>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <NavItem><Link to={''}>TEACHER</Link></NavItem>
                     </Grid>
                 </Grid>
         )

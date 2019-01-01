@@ -3,14 +3,8 @@ import styled from 'styled-components';
 import {brandPrimary, Inlay} from '../theme';
 import {Section, SectionTitle} from '../theme';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom'
-
-const Flyer = styled.img`
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-`
+import PageHeader from '../layout/header/PageHeader';
+import pageHeaderImage from '../../assets/images/header_background_1.jpg';
 
 const Text = styled.p`
   line-height: 1.4;
@@ -28,6 +22,7 @@ export default class Home extends Component {
                     <title>Highland Dancing Basel</title>
                     <meta name="Description" content="<FILL ME IN>" />
                 </Helmet>
+                <PageHeader imageUrl={pageHeaderImage}/>
                 <Section even>
                     <Inlay>
                         <SectionTitle>Highland Dancing Basel</SectionTitle>

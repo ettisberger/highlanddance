@@ -10,11 +10,11 @@ import styled from 'styled-components';
 import theme from './theme'
 
 const Main = styled.main`
-  margin-top: 110px;
+  height: 50%;
   
-  ${theme.breakpoints.down('sm')}{
-    margin-top: 56px; 
-  }
+  // ${theme.breakpoints.down('sm')}{
+  //   margin-top: 56px; 
+  // }
 `;
 
 export default class App extends React.Component {
@@ -24,8 +24,8 @@ export default class App extends React.Component {
                 <Header/>
                 <Main>
                     <Route name="home" exact path="/" component={Home} />
+                    <Footer/>
                 </Main>
-                <Footer/>
             </React.Fragment>
         )
     }

@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
-import theme, {accent1Color, brandPrimary} from '../../theme';
+import theme, {brandPrimary, whiteColor} from '../../theme';
 import NavigationBar from './navigation/NavigationBar';
 import MobileNavigationBar from './navigation/MobileNavigationBar';
 import Hidden from '@material-ui/core/Hidden'
 import {Link} from 'react-router-dom';
 
-const HeaderWrapper = styled.header`
-    background-color: ${brandPrimary};
-    position: fixed;
+const HeaderBar = styled.header`
+    background-color: ${whiteColor};
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 30px;
+    padding: 50px 30px;
     z-index: 9999;
-    opacity: 0.9;
+    opacity: 0.8;
 `;
 
 const Logo = styled.img`
@@ -36,14 +35,14 @@ export default class Header extends Component {
                     <MobileNavigationBar/>
                 </Hidden>
                 <Hidden xsDown>
-                    <HeaderWrapper>
+                    <HeaderBar>
                         <Grid container spacing={16}>
                             <Grid item xs={4}>
-                                <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>
+                                <Link to={''}><Logo src={'/assets/images/logo_header_blue.png'}/></Link>
                             </Grid>
                             <NavigationBar/>
                         </Grid>
-                    </HeaderWrapper>
+                    </HeaderBar>
                 </Hidden>
             </React.Fragment>
         )
