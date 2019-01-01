@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid/Grid';
 import styled from 'styled-components';
 import {brandPrimary} from '../../../theme';
+import {FormattedMessage} from 'react-intl';
 
 const NavItem = styled.div`
   color: ${brandPrimary};
@@ -48,16 +49,16 @@ class NavigationBar extends Component {
         return (
                 <Grid component={'nav'} container item xs={8} justify={'flex-end'} alignItems={'center'}>
                     <Grid item xs={3}>
-                        <NavItem><Link to={''}>HOME</Link></NavItem>
+                        <NavItem><Link to={''}><FormattedMessage id="navigation.home"/></Link></NavItem>
                     </Grid>
                     <Grid item xs={3}>
-                        <NavItem><Link to={'about'}>ABOUT</Link></NavItem>
+                        <NavItem><Link to={'about'}><FormattedMessage id="navigation.about"/></Link></NavItem>
                     </Grid>
                     <Grid item xs={3}>
-                        <NavItem><Link to={''}>CLASSES</Link></NavItem>
+                        <NavItem><Link to={''}><FormattedMessage id="navigation.classes"/></Link></NavItem>
                     </Grid>
                     <Grid item xs={3}>
-                        <NavItem><Link to={''}>TEACHER</Link></NavItem>
+                        <NavItem><Link to={''}><FormattedMessage id="navigation.teacher"/></Link></NavItem>
                     </Grid>
                 </Grid>
         )
