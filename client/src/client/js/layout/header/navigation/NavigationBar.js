@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid/Grid';
 import styled from 'styled-components';
-import {brandPrimary, linkColor} from '../../../theme';
+import {brandPrimary} from '../../../theme';
 
 const NavItem = styled.div`
   color: ${brandPrimary};
@@ -51,7 +51,7 @@ class NavigationBar extends Component {
                         <NavItem><Link to={''}>HOME</Link></NavItem>
                     </Grid>
                     <Grid item xs={3}>
-                        <NavItem><Link to={''}>ABOUT</Link></NavItem>
+                        <NavItem><Link to={'about'}>ABOUT</Link></NavItem>
                     </Grid>
                     <Grid item xs={3}>
                         <NavItem><Link to={''}>CLASSES</Link></NavItem>

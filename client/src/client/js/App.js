@@ -8,6 +8,7 @@ import Footer from './layout/footer/Footer';
 import Home from './home/Home';
 import styled from 'styled-components';
 import theme from './theme'
+import About from './about/About';
 
 const Main = styled.main`
   height: 50%;
@@ -24,6 +25,7 @@ export default class App extends React.Component {
                 <Header/>
                 <Main>
                     <Route name="home" exact path="/" component={Home} />
+                    <Route name="about" exact path="/about" component={About} />
                     <Footer/>
                 </Main>
             </React.Fragment>
