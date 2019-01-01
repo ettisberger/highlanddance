@@ -12,9 +12,21 @@ const HeaderBar = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    padding: 50px 30px;
+    padding: 20px 30px 50px 30px;
     z-index: 9999;
     opacity: 0.8;
+`;
+
+const LanguageBar = styled.div`
+    background-color: ${whiteColor};
+    text-align: right;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    width: 100%;
+    z-index: 9999;
+    color: ${brandPrimary}
+    font-size: 12px;
 `;
 
 const Logo = styled.img`
@@ -35,6 +47,7 @@ export default class Header extends Component {
                     <MobileNavigationBar/>
                 </Hidden>
                 <Hidden xsDown>
+                    <LanguageBar>deutsch | english</LanguageBar>
                     <HeaderBar>
                         <Grid container spacing={16}>
                             <Grid item xs={4}>
