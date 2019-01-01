@@ -22,7 +22,7 @@ export default class Home extends Component {
                     <title>Highland Dancing Basel</title>
                     <meta name="Description" content="<FILL ME IN>" />
                 </Helmet>
-                <PageHeader imageUrl={pageHeaderImage}/>
+                <PageHeader imageUrl={pageHeaderImage} title={'Highland Dancing Basel'}/>
                 <Section even>
                     <Inlay>
                         <SectionTitle>Highland Dancing Basel</SectionTitle>
