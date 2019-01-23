@@ -4,7 +4,7 @@ import {brandPrimary, Inlay} from '../theme';
 import {Section, SectionTitle} from '../theme';
 import { Helmet } from 'react-helmet';
 import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_2.jpg';
+import pageHeaderImage from '../../assets/images/header_background_5.jpg';
 
 const Text = styled.p`
   line-height: 1.4;

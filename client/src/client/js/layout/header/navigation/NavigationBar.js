@@ -7,7 +7,7 @@ import {FormattedMessage} from 'react-intl';
 
 const NavItem = styled.div`
   color: ${brandPrimary};
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   
   && {

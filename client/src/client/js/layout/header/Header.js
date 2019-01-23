@@ -31,7 +31,7 @@ const LanguageBar = styled.div`
 
 const Logo = styled.img`
     max-width: 100%; 
-    max-height: 70px;
+    max-height: 90px;
     float: left;
     
   ${theme.breakpoints.down('sm')}{
