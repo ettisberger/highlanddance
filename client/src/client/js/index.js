@@ -11,6 +11,8 @@ import de from 'react-intl/locale-data/de';
 import translationsDE from '../assets/translations/de.json'
 import translationsEN from '../assets/translations/en.json'
 import {flattenMessages} from './common/translationService';
+import store from './reducers/store';
+import {changeLanguage} from './actions/actions';
 
 // init localization
 addLocaleData([...de, ...en]);
@@ -19,6 +21,10 @@ const translations = {
     'de': translationsDE,
     'en': translationsEN
 };
+
+// testing redux
+// window.store = store;
+// window.changeLanguage = changeLanguage;
 
 const renderApp = () => {
     render(
