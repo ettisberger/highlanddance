@@ -6,6 +6,8 @@ import NavigationBar from './navigation/NavigationBar';
 import MobileNavigationBar from './navigation/MobileNavigationBar';
 import Hidden from '@material-ui/core/Hidden'
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {changeLanguage} from '../../actions/actions';
 
 const HeaderBar = styled.header`
     background-color: ${whiteColor};
@@ -39,7 +41,17 @@ const Logo = styled.img`
   }
 `;
 
-export default class Header extends Component {
+const mapStateToProps = function(state){
+    return {
+        language: state.language,
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    changeLanguage : language => dispatch(changeLanguage(language))
+})
+
+class Header extends Component {
     render() {
         return (
             <React.Fragment>
@@ -47,7 +59,7 @@ export default class Header extends Component {
                     <MobileNavigationBar/>
                 </Hidden>
                 <Hidden xsDown>
-                    <LanguageBar>deutsch | english</LanguageBar>
+                    <LanguageBar><a onClick={() => this.props.changeLanguage('de')}>deutsch</a> | <a role="button" onClick={() => this.props.changeLanguage('en')}>english</a></LanguageBar>
                     <HeaderBar>
                         <Grid container spacing={16}>
                             <Grid item xs={4}>
@@ -61,3 +73,5 @@ export default class Header extends Component {
         )
     }
 }
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

@@ -13,6 +13,7 @@ import translationsEN from '../assets/translations/en.json'
 import {flattenMessages} from './common/translationService';
 import store from './reducers/store';
 import {changeLanguage} from './actions/actions';
+import Provider from 'react-redux/es/components/Provider';
 
 // init localization
 addLocaleData([...de, ...en]);
@@ -23,19 +24,31 @@ const translations = {
 };
 
 // testing redux
-// window.store = store;
-// window.changeLanguage = changeLanguage;
+//window.store = store;
+//window.changeLanguage = changeLanguage;
+
+// Log the initial state
+console.log(store.getState())
+
+// Every time the state changes, log it
+// Note that subscribe() returns a function for unregistering the listener
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
+
+store.dispatch(changeLanguage("de"));
+store.dispatch(changeLanguage("en"));
 
 const renderApp = () => {
     render(
         <MuiThemeProvider theme={highlanddanceTheme}>
             <IntlProvider
-                locale='de'
+                locale={'de'}
                 messages={flattenMessages(translations['de'])}
             >
-                <Router>
-                    <App />
-                </Router>
+                <Provider store={store}>
+                    <Router>
+                        <App />
+                    </Router>
+                </Provider>
             </IntlProvider>
         </MuiThemeProvider>,
         document.getElementsByTagName('root')[0]

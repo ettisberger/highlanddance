@@ -18,7 +18,7 @@ const Main = styled.main`
   // }
 `;
 
-export default class App extends React.Component {
+class App extends React.Component {
     render() {
         return (
             <React.Fragment>
@@ -32,3 +32,5 @@ export default class App extends React.Component {
         )
     }
 }
+
+export default App;

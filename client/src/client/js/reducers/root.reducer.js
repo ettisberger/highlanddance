@@ -1,7 +1,7 @@
 import {CHANGE_LANGUAGE} from '../actions/actions';
 
 const initialState = {
-    language: "DE"
+    language: "de"
 };
 
 function rootReducer(state = initialState, { type, language}) {
