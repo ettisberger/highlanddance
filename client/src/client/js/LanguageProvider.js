@@ -1,14 +1,28 @@
 // LanguageProvider.js
 
-import { connect } from 'react-redux';
-import { IntlProvider } from 'react-intl';
+import {connect} from 'react-redux';
+import {IntlProvider} from 'react-intl';
+import {flattenMessages} from './common/translationService';
+import React, {Component} from 'react';
+import {loadTranslations} from './actions/actions';
 
-// This function will map the current redux state to the props for the component that it is "connected" to.
-// When the state of the redux store changes, this function will be called, if the props that come out of
-// this function are different, then the component that is wrapped is re-rendered.
-function mapStateToProps(state) {
-    const { language } = state.language;
-    return { language: language};
+const mapStateToProps = function(state){
+    return {
+        language: state.language,
+        translations: state.translations
+    }
 }
 
-export default connect(mapStateToProps)(IntlProvider);
+class LanguageProvider extends Component {
+    render() {
+        const { children } = this.props;
+
+        return (
+            <IntlProvider locale={this.props.language} key={this.props.language} messages={this.props.translations}>
+                {children}
+            </IntlProvider>
+        );
+    }
+}
+
+export default connect(mapStateToProps)(LanguageProvider);

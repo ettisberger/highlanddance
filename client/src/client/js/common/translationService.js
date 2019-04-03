@@ -1,4 +1,4 @@
-export const flattenMessages = ((nestedMessages, prefix = '') => {
+export function flattenMessages (nestedMessages, prefix = '') {
     if (nestedMessages === null) {
         return {}
     }
@@ -12,6 +12,6 @@ export const flattenMessages = ((nestedMessages, prefix = '') => {
             Object.assign(messages, flattenMessages(value, prefixedKey))
         }
 
-        return messages
+        return messages;
     }, {})
-})
+}

@@ -7,7 +7,8 @@ import MobileNavigationBar from './navigation/MobileNavigationBar';
 import Hidden from '@material-ui/core/Hidden'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {changeLanguage} from '../../actions/actions';
+import {changeLanguage, loadTranslations} from '../../actions/actions';
+import {flattenMessages} from '../../common/translationService';
 
 const HeaderBar = styled.header`
     background-color: ${whiteColor};
@@ -48,7 +49,9 @@ const mapStateToProps = function(state){
 }
 
 const mapDispatchToProps = dispatch => ({
-    changeLanguage : language => dispatch(changeLanguage(language))
+    changeLanguage : language => {
+        dispatch(changeLanguage(language));
+    }
 })
 
 class Header extends Component {
