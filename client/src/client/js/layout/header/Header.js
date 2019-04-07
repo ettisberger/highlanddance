@@ -62,7 +62,10 @@ class Header extends Component {
                     <MobileNavigationBar/>
                 </Hidden>
                 <Hidden xsDown>
-                    <LanguageBar><a onClick={() => this.props.changeLanguage('de')}>deutsch</a> | <a role="button" onClick={() => this.props.changeLanguage('en')}>english</a></LanguageBar>
+                    <LanguageBar>
+                        <a href="#" style={this.props.language === 'de' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('de')}>deutsch</a>
+                        <span> | </span>
+                        <a href="#" style={this.props.language === 'en' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('en')}>english</a></LanguageBar>
                     <HeaderBar>
                         <Grid container spacing={16}>
                             <Grid item xs={4}>
