@@ -1,13 +1,6 @@
 {
-  "MAIL": {
-    "USER": "test@test.ch",
-    "PW": "test",
-    "SMTP": "rubin.metanet.ch",
-    "PORT": "465"
-  },
-  "USE_SSL": true,
   "APP": {
-    "TITLE": "Swords and Spirits LOCAL",
+    "TITLE": "Higland Dancing Basel LOCAL",
     "BASE_URL": "http://localhost:8080"
   }
 }

@@ -13,13 +13,6 @@ module.exports = {
         if (process.env.NODE_ENV === 'production') {
             if(!secretConfig){
                 config = {
-                    "MAIL": {
-                        "USER": process.env.MAIL_USER,
-                        "PW": process.env.MAIL_PW,
-                        "SMTP": process.env.MAIL_SMTP,
-                        "PORT": process.env.MAIL_PORT
-                    },
-                    "USE_SSL": process.env.USE_SSL,
                     "APP": {
                         "TITLE": process.env.APP_TITLE,
                         "BASE_URL": process.env.BASE_URL
