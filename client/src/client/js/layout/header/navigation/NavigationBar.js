@@ -2,18 +2,18 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid/Grid';
 import styled from 'styled-components';
-import {brandPrimary} from '../../../theme';
+import {brandPrimary, whiteColor} from '../../../theme';
 import {FormattedMessage} from 'react-intl';
 
 const NavItem = styled.div`
-  color: ${brandPrimary};
+  color: ${whiteColor};
   font-size: 18px;
   text-align: center;
   
   && {
     a {
       position: relative;
-      color: ${brandPrimary};
+      color: ${whiteColor};
       text-decoration: none;
     }
   
@@ -21,7 +21,7 @@ const NavItem = styled.div`
     }
     
     a:visited {
-      color: ${brandPrimary};
+      color: ${whiteColor};
     }
     
     a:before {
@@ -31,7 +31,7 @@ const NavItem = styled.div`
       height: 2px;
       bottom: -10px;
       left: 0;
-      background-color: ${brandPrimary};
+      background-color: ${whiteColor};
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.3s ease-in-out 0s;

@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles'; // v1.x
 import styled, {css} from 'styled-components'
 
-export const backgroundColor = '#edebe9';
+export const backgroundColor = '#fbf9f7';
 export const brandPrimary = '#25408f';
 export const accent1Color = '#ECF0F1';
 export const linkColor = '#fff';
@@ -23,6 +23,11 @@ export const Inlay = styled.div`
 `;
 
 export const Section = styled.section`
+  &:first-of-type {
+    margin-top: 300px;
+  }
+
+  position: relative;
   padding: 3rem 0;
   overflow: hidden;
   

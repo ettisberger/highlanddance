@@ -7,10 +7,11 @@ import MobileNavigationBar from './navigation/MobileNavigationBar';
 import Hidden from '@material-ui/core/Hidden'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {changeLanguage, loadTranslations} from '../../actions/actions';
+import {changeLanguage} from '../../actions/actions';
 
 const HeaderBar = styled.header`
-    background-color: ${whiteColor};
+    position: relative;
+    background-color: transparent;
     top: 0;
     left: 0;
     width: 100%;
@@ -20,15 +21,20 @@ const HeaderBar = styled.header`
 `;
 
 const LanguageBar = styled.div`
-    background-color: ${whiteColor};
+    position: relative;
+    background-color: transparent;
     text-align: right;
     top: 0;
     right: 0;
     padding: 10px;
     width: 100%;
     z-index: 9999;
-    color: ${brandPrimary}
+    color: ${whiteColor};
     font-size: 12px;
+    
+    a {
+      color: ${whiteColor};
+    }
 `;
 
 const Logo = styled.img`
@@ -68,7 +74,7 @@ class Header extends Component {
                     <HeaderBar>
                         <Grid container spacing={16}>
                             <Grid item xs={4}>
-                                <Link to={''}><Logo src={'/assets/images/logo_header_blue.png'}/></Link>
+                                <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>
                             </Grid>
                             <NavigationBar/>
                         </Grid>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Hidden from '@material-ui/core/Hidden'
-import {whiteColor} from '../../theme';
+import {whiteColor, brandPrimary} from '../../theme';
 
 const PageHeaderWrapper = styled.header`
     height: 100%;
@@ -15,6 +15,16 @@ const PageHeaderWrapper = styled.header`
     justify-content: center;
 `;
 
+const HeaderTest = styled.header`
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  height: 500px;
+  background: #0b345d;
+  background-image: linear-gradient(155deg, #000 0%, ${brandPrimary} 50%, ${brandPrimary} 100%);
+`;
+
 const PageHeaderTitle = styled.h1`
     margin-top: 0;
     margin-bottom: 0;
@@ -22,14 +32,26 @@ const PageHeaderTitle = styled.h1`
     color: ${whiteColor};
 `;
 
+const Svg = styled.svg`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+`;
+
 export default class PageHeader extends Component {
     render() {
         return (
             <React.Fragment>
                 <Hidden xsDown>
-                    <PageHeaderWrapper imageUrl={this.props.imageUrl}>
-                        <PageHeaderTitle className="animated fadeInDown slow">{this.props.title}</PageHeaderTitle>
-                    </PageHeaderWrapper>
+                    {/*<PageHeaderWrapper imageUrl={this.props.imageUrl}>*/}
+                    {/*    <PageHeaderTitle className="animated fadeInDown slow">{this.props.title}</PageHeaderTitle>*/}
+                    {/*</PageHeaderWrapper>*/}
+                    <HeaderTest>
+                        <Svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="-300 0 950 270" >
+                            <path d="M-314,267 C105,364 400,100 812,279" fill="none" stroke="white" strokeWidth="120" strokeLinecap="round"/>
+                        </Svg>
+                    </HeaderTest>
                 </Hidden>
             </React.Fragment>
         )

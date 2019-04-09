@@ -10,10 +10,9 @@ import styled from 'styled-components';
 import theme from './theme'
 import About from './about/About';
 import Teacher from './teacher/Teacher';
+import Classes from './classes/Classes';
 
-const Main = styled.main`
-  height: 50%;
-  
+const Main = styled.main`    
   // ${theme.breakpoints.down('sm')}{
   //   margin-top: 56px; 
   // }
@@ -27,7 +26,7 @@ class App extends React.Component {
                 <Main>
                     <Route name="home" exact path="/" component={Home} />
                     <Route name="about" exact path="/about" component={About} />
-                    <Route name="classes" exact path="/classes" component={About} />
+                    <Route name="classes" exact path="/classes" component={Classes} />
                     <Route name="teacher" exact path="/teacher" component={Teacher} />
                     <Route name="partner" exact path="/partner" component={About} />
                     <Footer/>
