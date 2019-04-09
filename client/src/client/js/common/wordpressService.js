@@ -10,6 +10,22 @@ class WordPressService {
     loadHome(language) {
         return axios.get(this.baseUrl + language + this.apiUrl + 'home');
     }
+
+    loadAbout(language) {
+        return axios.get(this.baseUrl + language + this.apiUrl + 'about');
+    }
+
+    loadClasses(language) {
+        return axios.get(this.baseUrl + language + this.apiUrl + 'classes');
+    }
+
+    loadTeacher(language) {
+        return axios.get(this.baseUrl + language + this.apiUrl + 'teacher');
+    }
+
+    loadPartner(language) {
+        return axios.get(this.baseUrl + language + this.apiUrl + 'partner');
+    }
 }
 
 export default WordPressService;

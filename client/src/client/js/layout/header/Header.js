@@ -8,7 +8,6 @@ import Hidden from '@material-ui/core/Hidden'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {changeLanguage, loadTranslations} from '../../actions/actions';
-import {flattenMessages} from '../../common/translationService';
 
 const HeaderBar = styled.header`
     background-color: ${whiteColor};

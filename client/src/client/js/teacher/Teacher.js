@@ -4,9 +4,10 @@ import {brandPrimary, Inlay} from '../theme';
 import {Section, SectionTitle} from '../theme';
 import { Helmet } from 'react-helmet';
 import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_5.jpg';
+import pageHeaderImage from '../../assets/images/header_background_4.jpg';
 import WordpressService from '../common/wordpressService';
 import {connect} from 'react-redux';
+import {FormattedMessage} from 'react-intl';
 
 const Text = styled.p`
   line-height: 1.4;
@@ -24,22 +25,20 @@ const mapStateToProps = function(state){
 
 const wordpressService = new WordpressService();
 
-class Home extends Component {
+class Teacher extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = { homeEntries: []};
+        this.state = { teacherEntries: []};
     }
 
 
     componentDidMount() {
-        wordpressService.loadHome(this.props.language).then(response => {
-            console.log(response.data);
-
-           this.setState({
-               homeEntries : response.data
-           })
+        wordpressService.loadTeacher(this.props.language).then(response => {
+            this.setState({
+                teacherEntries : response.data
+            })
         });
     }
 
@@ -47,15 +46,19 @@ class Home extends Component {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title>Home</title>
-                    <meta name="Description" content="Startseite, Home, Highland Dancing Basel" />
+                    <title>Teacher</title>
+                    <meta name="Description" content="Tanzlehrerin, Teacher, Highland Dancing Basel" />
                 </Helmet>
-                <PageHeader imageUrl={pageHeaderImage} title={'Highland Dancing Basel'}/>
-                { this.state.homeEntries.map((homeEntry, index) =>
+                <FormattedMessage id={"navigation.teacher"}>
+                    {title => (
+                        <PageHeader imageUrl={pageHeaderImage} title={title}/>
+                    )}
+                </FormattedMessage>
+                { this.state.teacherEntries.map((teacherEntry, index) =>
                     <Section even={index % 2 == 0} odd={index % 2 != 0} key={index}>
                         <Inlay>
-                            <SectionTitle>{homeEntry.title}</SectionTitle>
-                            <Text dangerouslySetInnerHTML={{__html: homeEntry.content}}></Text>
+                            <SectionTitle>{teacherEntry.title}</SectionTitle>
+                            <Text dangerouslySetInnerHTML={{__html: teacherEntry.content}}></Text>
                         </Inlay>
                     </Section>
                 )}
@@ -64,4 +67,4 @@ class Home extends Component {
     }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Teacher);

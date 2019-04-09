@@ -48,17 +48,20 @@ class NavigationBar extends Component {
     render() {
         return (
                 <Grid component={'nav'} container item xs={8} justify={'flex-end'} alignItems={'center'}>
-                    <Grid item xs={3}>
+                    <Grid item xs={2}>
                         <NavItem><Link to={''}><FormattedMessage id="navigation.home"/></Link></NavItem>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={2}>
                         <NavItem><Link to={'about'}><FormattedMessage id="navigation.about"/></Link></NavItem>
                     </Grid>
-                    <Grid item xs={3}>
-                        <NavItem><Link to={''}><FormattedMessage id="navigation.classes"/></Link></NavItem>
+                    <Grid item xs={2}>
+                        <NavItem><Link to={'classes'}><FormattedMessage id="navigation.classes"/></Link></NavItem>
                     </Grid>
-                    <Grid item xs={3}>
-                        <NavItem><Link to={''}><FormattedMessage id="navigation.teacher"/></Link></NavItem>
+                    <Grid item xs={2}>
+                        <NavItem><Link to={'teacher'}><FormattedMessage id="navigation.teacher"/></Link></NavItem>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <NavItem><Link to={'partner'}><FormattedMessage id="navigation.partner"/></Link></NavItem>
                     </Grid>
                 </Grid>
         )
