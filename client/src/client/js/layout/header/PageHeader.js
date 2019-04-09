@@ -21,8 +21,21 @@ const HeaderTest = styled.header`
   z-index: 1;
   top: 0;
   height: 500px;
-  background: #0b345d;
+  background-image: linear-gradient(155deg, #000 0%, ${brandPrimary} 50%, ${brandPrimary} 100%); /* fallback */
   background-image: linear-gradient(155deg, #000 0%, ${brandPrimary} 50%, ${brandPrimary} 100%);
+  
+  &:after {
+    content: "";
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(${props => props.imageUrl});
+    opacity: .02;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const PageHeaderTitle = styled.h1`
@@ -47,7 +60,7 @@ export default class PageHeader extends Component {
                     {/*<PageHeaderWrapper imageUrl={this.props.imageUrl}>*/}
                     {/*    <PageHeaderTitle className="animated fadeInDown slow">{this.props.title}</PageHeaderTitle>*/}
                     {/*</PageHeaderWrapper>*/}
-                    <HeaderTest>
+                    <HeaderTest imageUrl={this.props.imageUrl}>
                         <Svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="-300 0 950 270" >
                             <path d="M-314,267 C105,364 400,100 812,279" fill="none" stroke="white" strokeWidth="120" strokeLinecap="round"/>
                         </Svg>
