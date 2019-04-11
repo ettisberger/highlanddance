@@ -8,8 +8,6 @@ import '../styles/main.scss'
 import {addLocaleData} from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
-import translationsDE from '../assets/translations/de.json'
-import translationsEN from '../assets/translations/en.json'
 import store from './reducers/store';
 import Provider from 'react-redux/es/components/Provider';
 import LanguageProvider from './LanguageProvider';
