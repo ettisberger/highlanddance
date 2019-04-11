@@ -24,7 +24,7 @@ export const Inlay = styled.div`
 
 export const Section = styled.section`
   &:first-of-type {
-    margin-top: 300px;
+    margin-top: 50px;
   }
 
   position: relative;

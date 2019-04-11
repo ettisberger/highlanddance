@@ -10,9 +10,9 @@ import {connect} from 'react-redux';
 import {changeLanguage} from '../../actions/actions';
 
 const HeaderBar = styled.header`
-    position: relative;
+    position: absolute;
     background-color: transparent;
-    top: 0;
+    top: 10px;
     left: 0;
     width: 100%;
     padding: 20px 30px 50px 30px;
@@ -21,7 +21,7 @@ const HeaderBar = styled.header`
 `;
 
 const LanguageBar = styled.div`
-    position: relative;
+    position: absolute;
     background-color: transparent;
     text-align: right;
     top: 0;

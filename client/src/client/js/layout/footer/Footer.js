@@ -41,7 +41,7 @@ const FooterBackground = styled.div`
     height: auto;
     background-color: ${whiteColor};
 
-    @keyframes swell {
+    @keyframes footer-swell {
         0%, 100% {
         	transform: translate3d(0,0,0);
         }
@@ -58,7 +58,7 @@ const FooterBackground = styled.div`
 
 		
 		#highland-moving {
-			animation: swell 7s ease -1.25s infinite;
+			animation: footer-swell 7s ease -1.25s infinite;
 		}
     }
 `;

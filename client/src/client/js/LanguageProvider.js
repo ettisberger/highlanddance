@@ -2,9 +2,7 @@
 
 import {connect} from 'react-redux';
 import {IntlProvider} from 'react-intl';
-import {flattenMessages} from './common/translationService';
 import React, {Component} from 'react';
-import {loadTranslations} from './actions/actions';
 
 const mapStateToProps = function(state){
     return {
