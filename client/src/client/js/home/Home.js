@@ -48,7 +48,7 @@ class Home extends Component {
                     <title>Home</title>
                     <meta name="Description" content="Startseite, Home, Highland Dancing Basel" />
                 </Helmet>
-                <PageHeader imageUrl={pageHeaderImage} title={'Highland Dancing Basel'}/>
+                <PageHeader imageUrl={pageHeaderImage} title={'School of Highland Dancing Basel'}/>
                 { this.state.homeEntries.map((homeEntry, index) =>
                     <Section even={index % 2 == 0} odd={index % 2 != 0} key={index}>
                         <Inlay>

@@ -74,15 +74,11 @@ class Footer extends Component {
                             <linearGradient id="highland" x1="0%" y1="100%" x2="100%" y2="0%" >
                                 <stop offset="0%" stopColor="rgb(37,64,143)" stopOpacity="1" />
                                 <stop offset="45%" stopColor="rgb(37,64,143)" stopOpacity="1" />
-                                <stop offset="100%" stopColor="rgb(52,90,201)" stopOpacity="1" />
+                                <stop offset="100%" stopColor="#695cff" stopOpacity="1" />
                             </linearGradient>
                         </defs>
-                        {/*<svg viewBox="0 0 400 100" preserveAspectRatio="none">*/}
-                            <path id="highland-fix" fill="url(#highland)" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"/>
-                        {/*</svg>*/}
-                        {/*<svg viewBox="0 0 400 100" preserveAspectRatio="none">*/}
-                            <path id="highland-moving" fill="url(#highland)" fillOpacity="0.8" d="M0 30 V12 Q40 15 55 12 T100 11 V30z"/>
-                        {/*</svg>*/}
+                        <path id="highland-fix" fill="url(#highland)" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"/>
+                        <path id="highland-moving" fill="url(#highland)" fillOpacity="0.3" d="M0 30 V12 Q40 15 55 12 T100 11 V30z"/>
                     </svg>
                 </FooterBackground>
 

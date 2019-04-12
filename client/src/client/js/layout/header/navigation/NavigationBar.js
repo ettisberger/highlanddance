@@ -47,7 +47,7 @@ const NavItem = styled.div`
 class NavigationBar extends Component {
     render() {
         return (
-                <Grid component={'nav'} container item xs={8} justify={'flex-end'} alignItems={'center'}>
+                <Grid component={'nav'} container item xs={9} justify={'flex-end'} alignItems={'center'}>
                     <Grid item xs={2}>
                         <NavItem><Link to={''}><FormattedMessage id="navigation.home"/></Link></NavItem>
                     </Grid>
@@ -67,4 +67,5 @@ class NavigationBar extends Component {
         )
     }
 }
+
 export default NavigationBar;

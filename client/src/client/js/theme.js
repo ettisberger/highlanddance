@@ -13,7 +13,7 @@ export const Inlay = styled.div`
     margin: 0 auto;
 
   ${createMuiTheme().breakpoints.up('lg')}{
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
   }
   

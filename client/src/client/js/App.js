@@ -29,8 +29,8 @@ class App extends React.Component {
                     <Route name="classes" exact path="/classes" component={Classes} />
                     <Route name="teacher" exact path="/teacher" component={Teacher} />
                     <Route name="partner" exact path="/partner" component={About} />
-                    <Footer/>
                 </Main>
+                <Footer/>
             </React.Fragment>
         )
     }

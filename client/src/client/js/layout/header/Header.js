@@ -1,23 +1,29 @@
 import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
-import theme, {brandPrimary, whiteColor} from '../../theme';
+import theme, {brandPrimary, Inlay, whiteColor} from '../../theme';
 import NavigationBar from './navigation/NavigationBar';
 import MobileNavigationBar from './navigation/MobileNavigationBar';
 import Hidden from '@material-ui/core/Hidden'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {changeLanguage} from '../../actions/actions';
+import createMuiTheme from '@material-ui/core/es/styles/createMuiTheme';
 
 const HeaderBar = styled.header`
+	${createMuiTheme().breakpoints.up('lg')}{
+		width: 1200px;
+		margin: 0 auto;
+	}
+	
     position: absolute;
     background-color: transparent;
-    top: 10px;
+    top: 20px;
     left: 0;
+    right: 0; // without margin auto doesnt do anything
     width: 100%;
-    padding: 20px 30px 50px 30px;
-    z-index: 9999;
-    opacity: 0.8;
+    padding: 20px 30px 50px 0px;
+    z-index: 9998;
 `;
 
 const LanguageBar = styled.div`
@@ -26,7 +32,7 @@ const LanguageBar = styled.div`
     text-align: right;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     z-index: 9999;
     color: ${whiteColor};
@@ -70,10 +76,11 @@ class Header extends Component {
                     <LanguageBar>
                         <a href="#" style={this.props.language === 'de' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('de')}>deutsch</a>
                         <span> | </span>
-                        <a href="#" style={this.props.language === 'en' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('en')}>english</a></LanguageBar>
+                        <a href="#" style={this.props.language === 'en' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('en')}>english</a>
+                    </LanguageBar>
                     <HeaderBar>
                         <Grid container spacing={16}>
-                            <Grid item xs={4}>
+                            <Grid item xs={3}>
                                 <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>
                             </Grid>
                             <NavigationBar/>
