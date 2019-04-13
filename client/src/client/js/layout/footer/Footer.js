@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import theme, {accent1Color, brandPrimary, backgroundColor, Inlay, whiteColor} from '../../theme';
+import theme, {accent1Color, brandPrimary, brandSecondary, Inlay, whiteColor} from '../../theme';
 import Grid from '@material-ui/core/Grid'
 import Mailto from 'react-protected-mailto'
 
 const FooterWrapper = styled.div`
-    height: 15rem;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 50%;
     padding: 3rem 0;
-    border-bottom: 10px solid ${brandPrimary};
-    background-color: ${brandPrimary};
+
     color: ${accent1Color};
     line-height: 1.4rem;
     
@@ -53,13 +56,12 @@ const FooterBackground = styled.div`
     svg {
     	position: relative;
 		width: 100%;
-		height: 100%;
+		height: 700px;
     }
-
 		
-		#highland-moving {
-			animation: footer-swell 7s ease -1.25s infinite;
-		}
+    #highland-moving {
+        animation: footer-swell 7s ease -1.25s infinite;
+    }
     }
 `;
 
@@ -69,7 +71,7 @@ class Footer extends Component {
         return (
             <footer>
                 <FooterBackground>
-                    <svg viewBox="0 0 100 25" preserveAspectRatio="none">
+                    <svg viewBox="0 5 100 25" preserveAspectRatio="none">
                         <defs>
                             <linearGradient id="highland" x1="0%" y1="100%" x2="100%" y2="0%" >
                                 <stop offset="0%" stopColor="rgb(37,64,143)" stopOpacity="1" />
@@ -78,34 +80,33 @@ class Footer extends Component {
                             </linearGradient>
                         </defs>
                         <path id="highland-fix" fill="url(#highland)" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"/>
-                        <path id="highland-moving" fill="url(#highland)" fillOpacity="0.3" d="M0 30 V12 Q40 15 55 12 T100 11 V30z"/>
+                        <path id="highland-moving" fill={brandSecondary} fillOpacity="0.3" d="M0 30 V12 Q40 15 55 12 T100 11 V30z"/>
                     </svg>
+                    <FooterWrapper>
+                        <Inlay>
+                            <Grid container justify={'center'}>
+                                <FooterItem container item xs={12} sm={8} direction={'column'}>
+                                    <FooterTitle>Kompass</FooterTitle>
+                                    <p>
+                                        Highland Dancing Basel<br/>
+                                        www.highlanddance.ch<br/>
+                                        2018/2019
+                                    </p>
+                                </FooterItem>
+                                <FooterItem container item xs={12} sm={4} direction={'column'}>
+                                    <FooterTitle>Kontakt</FooterTitle>
+                                    <p>
+                                       <MailToEncrypted
+                                        email='info@highlanddance.ch'
+                                        headers={
+                                            {subject:'Kontaktaufnahme'}
+                                        }/>
+                                    </p>
+                                </FooterItem>
+                            </Grid>
+                        </Inlay>
+                    </FooterWrapper>
                 </FooterBackground>
-
-                {/*<FooterWrapper>*/}
-                {/*    <Inlay>*/}
-                {/*        <Grid container justify={'center'}>*/}
-                {/*            <FooterItem container item xs={12} sm={8} direction={'column'}>*/}
-                {/*                <FooterTitle>Kompass</FooterTitle>*/}
-                {/*                <p>*/}
-                {/*                    Highland Dancing Basel<br/>*/}
-                {/*                    www.highlanddance.ch<br/>*/}
-                {/*                    2018/2019*/}
-                {/*                </p>*/}
-                {/*            </FooterItem>*/}
-                {/*            <FooterItem container item xs={12} sm={4} direction={'column'}>*/}
-                {/*                <FooterTitle>Kontakt</FooterTitle>*/}
-                {/*                <p>*/}
-                {/*                   <MailToEncrypted*/}
-                {/*                    email='info@highlanddance.ch'*/}
-                {/*                    headers={*/}
-                {/*                        {subject:'Kontaktaufnahme'}*/}
-                {/*                    }/>*/}
-                {/*                </p>*/}
-                {/*            </FooterItem>*/}
-                {/*        </Grid>*/}
-                {/*    </Inlay>*/}
-                {/*</FooterWrapper>*/}
             </footer>
         )
     }

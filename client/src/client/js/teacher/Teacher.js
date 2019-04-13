@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {brandPrimary, Inlay} from '../theme';
+import {brandPrimary, Inlay, LoadingPlaceholder} from '../theme';
 import {Section, SectionTitle} from '../theme';
 import { Helmet } from 'react-helmet';
 import PageHeader from '../layout/header/PageHeader';
@@ -30,19 +30,38 @@ class Teacher extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { teacherEntries: []};
+        this.state = { teacherEntries: [], loading: false};
     }
 
 
     componentDidMount() {
+        this.setState({loading: true});
+
         wordpressService.loadTeacher(this.props.language).then(response => {
             this.setState({
-                teacherEntries : response.data
+                teacherEntries : response.data,
+                loading: false
             })
         });
     }
 
     render() {
+        if(this.state.loading){
+            return (
+                <React.Fragment>
+                    <Helmet>
+                        <title>Home</title>
+                        <meta name="Description" content="Tanzlehrerin, Teacher, Highland Dancing Basel" />
+                    </Helmet>
+                    <FormattedMessage id={"navigation.teacher"}>
+                        {title => (
+                            <PageHeader imageUrl={pageHeaderImage} title={title}/>
+                        )}
+                    </FormattedMessage>
+                    <LoadingPlaceholder/>
+                </React.Fragment>
+            )
+        }
         return (
             <React.Fragment>
                 <Helmet>

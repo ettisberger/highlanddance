@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Hidden from '@material-ui/core/Hidden'
-import {whiteColor, brandPrimary, Inlay, blackColor} from '../../theme';
+import {whiteColor, brandPrimary, Inlay, blackColor, brandSecondary} from '../../theme';
 import {FormattedMessage} from 'react-intl';
 import {Link, withRouter} from 'react-router-dom';
 
@@ -18,12 +18,12 @@ const PagerHeaderWrapper = styled.header`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: ${brandPrimary};
+		background-color: ${brandSecondary};
 		border-radius: 0 0 50% 50%;
 		content: "";
 		left: 50px;
 		animation: header-swell 7s ease -1.25s infinite;
-		opacity: .2;
+		opacity: .4;
 	}
 	
 	@keyframes header-swell {
@@ -60,6 +60,7 @@ const PageHeaderTitle = styled.h1`
 	font-size: 4rem;
 	text-shadow: 0px 1px 4px rgba(0,0,0,.8);
 	//font-family: 'Lora';
+	font-family: Georgia, Times, serif;
 `;
 
 const LinkContainer = styled.div`
@@ -72,21 +73,17 @@ const LinkContainer = styled.div`
 	}
 `;
 
-const ClassesLink = styled(Link)`
+const LinkButton = styled(Link)`
 	margin-right: 20px;
 	padding: 10px;
-	color: ${brandPrimary};
-	background-color: ${whiteColor};
+	color: ${whiteColor};
+	background-color: transparent;
 	font-size: 1.3rem;
-	box-shadow: 1px 1px 1px ${blackColor};
-`;
-
-const ContactLink = styled(Link)`
-	padding: 10px;
-	color: ${brandPrimary};
-	background-color: ${whiteColor};
-	font-size: 1.3rem;
-	box-shadow: 1px 1px 1px ${blackColor};
+	border: 1px solid${whiteColor};
+	
+	&:hover {
+		background-color: ${brandSecondary};
+	}
 `;
 
 class PageHeader extends Component {
@@ -99,18 +96,18 @@ class PageHeader extends Component {
 	                        <Inlay>
 		                        <PageHeaderTitle className="animated fadeIn slow">{this.props.title}</PageHeaderTitle>
 		                        <LinkContainer className={"animated fadeIn slow"} hidden={this.props.location.pathname != '/'}>
-			                        <ClassesLink to={'classes'}>
+			                        <LinkButton to={'classes'}>
 				                        <FormattedMessage id="navigation.classes"/>
 				                        <i className="material-icons">
 					                        calendar_today
 				                        </i>
-			                        </ClassesLink>
-			                        <ContactLink to={'classes'}>
+			                        </LinkButton>
+			                        <LinkButton to={'classes'}>
 				                        <FormattedMessage id="navigation.contact"/>
 				                        <i className="material-icons">
 					                        contact_mail
 				                        </i>
-			                        </ContactLink>
+			                        </LinkButton>
 		                        </LinkContainer>
 	                        </Inlay>
 						</PageHeaderBackground>

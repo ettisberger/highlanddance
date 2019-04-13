@@ -9,7 +9,7 @@ const NavItem = styled.div`
   color: ${whiteColor};
   font-size: 18px;
   text-align: center;
-  
+
   && {
     a {
       position: relative;

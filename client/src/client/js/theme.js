@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components'
 
 export const backgroundColor = '#fbf9f7';
 export const brandPrimary = '#25408f';
+export const brandSecondary = '#5A56E6';
 export const accent1Color = '#ECF0F1';
 export const linkColor = '#fff';
 
@@ -45,6 +46,10 @@ export const Section = styled.section`
 export const SectionTitle = styled.h2 `
   text-align: center;
   color: ${brandPrimary};
+`;
+
+export const LoadingPlaceholder = styled.div`
+  height: 100vh;
 `;
 
 export default createMuiTheme({
