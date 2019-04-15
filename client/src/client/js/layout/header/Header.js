@@ -18,7 +18,7 @@ const HeaderBar = styled.header`
 	
     position: absolute;
     background-color: transparent;
-    top: 20px;
+    top: 0;
     left: 0;
     right: 0; // without margin auto doesnt do anything
     width: 100%;
@@ -27,7 +27,7 @@ const HeaderBar = styled.header`
 `;
 
 const LanguageBar = styled.div`
-    position: absolute;
+    position: relative;
     background-color: transparent;
     text-align: right;
     top: 0;
@@ -73,12 +73,12 @@ class Header extends Component {
                     <MobileNavigationBar/>
                 </Hidden>
                 <Hidden xsDown>
-                    <LanguageBar>
-                        <a href="#" style={this.props.language === 'de' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('de')}>deutsch</a>
-                        <span> | </span>
-                        <a href="#" style={this.props.language === 'en' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('en')}>english</a>
-                    </LanguageBar>
                     <HeaderBar>
+                        <LanguageBar>
+                            <a href="#" style={this.props.language === 'de' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('de')}>deutsch</a>
+                            <span> | </span>
+                            <a href="#" style={this.props.language === 'en' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('en')}>english</a>
+                        </LanguageBar>
                         <Grid container spacing={16}>
                             <Grid item xs={3}>
                                 <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>

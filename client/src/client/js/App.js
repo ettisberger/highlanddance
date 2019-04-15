@@ -16,6 +16,12 @@ const Main = styled.main`
   // ${theme.breakpoints.down('sm')}{
   //   margin-top: 56px; 
   // }
+  
+  //margin-top: -212px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 class App extends React.Component {
@@ -29,8 +35,9 @@ class App extends React.Component {
                     <Route name="classes" exact path="/classes" component={Classes} />
                     <Route name="teacher" exact path="/teacher" component={Teacher} />
                     <Route name="partner" exact path="/partner" component={About} />
-                </Main>
+                {/* footer inside of the main container because footers are bitches and dont behave */}
                 <Footer/>
+                </Main>
             </React.Fragment>
         )
     }
