@@ -7,6 +7,10 @@
   ],
   "plugins": [
     "transform-object-rest-spread", //restspread -> const {a, b, ...rest} = this.props
-    "transform-class-properties"
+    "transform-class-properties",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
   ]
 }

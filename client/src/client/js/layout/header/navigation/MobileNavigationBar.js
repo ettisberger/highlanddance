@@ -79,9 +79,12 @@ const styles = theme => ({
 });
 
 class MobileNavigationBar extends React.Component {
-    state = {
-        open: false,
-    };
+
+    constructor(props) {
+        super(props);
+
+        this.state = {open: false};
+    }
 
     handleDrawerOpen = () => {
         this.setState({ open: true });

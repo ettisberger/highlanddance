@@ -5,7 +5,7 @@ import {Section, SectionTitle} from '../theme';
 import { Helmet } from 'react-helmet';
 import PageHeader from '../layout/header/PageHeader';
 import pageHeaderImage from '../../assets/images/header_background_4.jpg';
-import WordpressService from '../common/wordpressService';
+import * as WordpressService from '../common/wordpressService';
 import {connect} from 'react-redux';
 import {FormattedMessage} from 'react-intl';
 
@@ -23,8 +23,6 @@ const mapStateToProps = function(state){
     }
 }
 
-const wordpressService = new WordpressService();
-
 class Teacher extends Component {
 
     constructor(props) {
@@ -37,7 +35,7 @@ class Teacher extends Component {
     componentDidMount() {
         this.setState({loading: true});
 
-        wordpressService.loadTeacher(this.props.language).then(response => {
+        WordpressService.loadTeacher(this.props.language).then(response => {
             this.setState({
                 teacherEntries : response.data,
                 loading: false

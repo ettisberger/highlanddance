@@ -16,20 +16,19 @@ const DayElementContainer = styled.div`
 `;
 
 const Month = styled.div`
-	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 16px;
 	padding: 10px;
 `;
 
 const Day = styled.div`
 	font-size: 24px;
+	font-weight: bold;
 `;
 
 class DayElement extends Component {
 
 	constructor(props) {
-		console.log(props)
 		super(props);
 	}
 

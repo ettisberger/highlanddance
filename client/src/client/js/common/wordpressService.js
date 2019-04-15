@@ -1,31 +1,24 @@
 import axios from 'axios';
 
-class WordPressService {
+const baseUrl = 'http://localhost:8888/highlanddance/server/';
+const apiUrl = '/api/v1/';
 
-    constructor() {
-        this.baseUrl = 'http://localhost:8888/highlanddance/server/';
-        this.apiUrl = '/api/v1/';
-    }
-
-    loadHome(language) {
-        return axios.get(this.baseUrl + language + this.apiUrl + 'home');
-    }
-
-    loadAbout(language) {
-        return axios.get(this.baseUrl + language + this.apiUrl + 'about');
-    }
-
-    loadClasses(language) {
-        return axios.get(this.baseUrl + language + this.apiUrl + 'classes');
-    }
-
-    loadTeacher(language) {
-        return axios.get(this.baseUrl + language + this.apiUrl + 'teacher');
-    }
-
-    loadPartner(language) {
-        return axios.get(this.baseUrl + language + this.apiUrl + 'partner');
-    }
+export async function loadHome(language) {
+    return await axios.get(baseUrl + language + apiUrl + 'home');
 }
 
-export default WordPressService;
+export async function loadAbout(language) {
+    return await axios.get(baseUrl + language + apiUrl + 'about');
+}
+
+export async function loadClasses(language) {
+    return await axios.get(baseUrl + language + apiUrl + 'classes');
+}
+
+export async function loadTeacher(language) {
+    return await axios.get(baseUrl + language + apiUrl + 'teacher');
+}
+
+export async function loadPartner(language) {
+    return await axios.get(baseUrl + language + apiUrl + 'partner');
+}

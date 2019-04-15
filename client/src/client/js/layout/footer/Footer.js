@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import theme, {accent1Color, brandPrimary, brandSecondary, Inlay, whiteColor} from '../../theme';
+import theme, {accent1Color, brandSecondary, Inlay, whiteColor} from '../../theme';
 import Grid from '@material-ui/core/Grid'
 import Mailto from 'react-protected-mailto'
 

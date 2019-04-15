@@ -5,8 +5,8 @@ import {Section, SectionTitle} from '../theme';
 import { Helmet } from 'react-helmet';
 import PageHeader from '../layout/header/PageHeader';
 import pageHeaderImage from '../../assets/images/header_background_5.jpg';
-import WordpressService from '../common/wordpressService';
 import {connect} from 'react-redux';
+import * as WordpressService from '../common/wordpressService';
 
 const Text = styled.p`
   line-height: 1.4;
@@ -22,8 +22,6 @@ const mapStateToProps = function(state){
     }
 }
 
-const wordpressService = new WordpressService();
-
 class Home extends Component {
 
     constructor(props) {
@@ -36,7 +34,7 @@ class Home extends Component {
     componentDidMount() {
         this.setState({loading: true});
 
-        wordpressService.loadHome(this.props.language).then(response => {
+        WordpressService.loadHome(this.props.language).then(response => {
            this.setState({
                homeEntries : response.data,
                loading: false

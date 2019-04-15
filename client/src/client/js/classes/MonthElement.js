@@ -19,7 +19,6 @@ const Month = styled.h3`
 class MonthElement extends Component {
 
 	constructor(props) {
-		console.log(props)
 		super(props);
 	}
 
