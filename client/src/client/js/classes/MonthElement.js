@@ -34,7 +34,6 @@ class MonthElement extends Component {
 	}
 
 	getDateAsString(day) {
-		console.log(day);
 		var day = new Date(day);
 		return "(" + day.getDate() + "." + (day.getMonth() + 1) + "." + day.getFullYear() +")";
 	}
