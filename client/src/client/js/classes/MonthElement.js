@@ -33,6 +33,11 @@ class MonthElement extends Component {
 		this.setState({clickedDay: day, showDayDetail: true});
 	}
 
+	getDateAsString(day) {
+		var day = new Date();
+		return "(" + day.getDate() + "." + day.getMonth() + "." + day.getFullYear() +")";
+	}
+
 	render() {
 		return (
 			<MonthContainer item xs={12} sm={6} >
@@ -43,7 +48,7 @@ class MonthElement extends Component {
 							<DayElement month={this.props.month.month} day={new Date(day.day)} key={index} onClick={() => this.clickedDay(day)}/>
 						) }
 					</Grid>
-					<DayDetail hidden={!this.state.showDayDetail}><FormattedMessage id="text.daydetail"></FormattedMessage> {this.state.clickedDay ? this.state.clickedDay.description: ""}</DayDetail>
+					<DayDetail hidden={!this.state.showDayDetail}><FormattedMessage id="text.description"/> {this.state.clickedDay ? this.getDateAsString(this.state.clickedDay.day) + " " + this.state.clickedDay.description : ""}</DayDetail>
 				</MonthItem>
 			</MonthContainer>
 		)

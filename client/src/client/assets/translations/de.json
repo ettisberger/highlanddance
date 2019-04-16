@@ -8,6 +8,6 @@
     "contact": "KONTAKT"
   },
   "text" : {
-    "daydetail" : "Bemerkung:"
+    "description" : "Bemerkung"
   }
 }
