@@ -22,6 +22,10 @@ class MonthElement extends Component {
 		super(props);
 	}
 
+	test = () => {
+		console.log("test");
+	}
+
 	render() {
 		return (
 			<MonthContainer item xs={12} sm={6} >

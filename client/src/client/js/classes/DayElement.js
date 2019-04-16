@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {brandSecondary, whiteColor} from '../theme';
+import {brandPrimary, brandSecondary, whiteColor} from '../theme';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
+import connect from 'react-redux/es/connect/connect';
 
 const DayElementContainer = styled.div`
 	display: flex;
@@ -13,6 +14,10 @@ const DayElementContainer = styled.div`
 	color: ${whiteColor};
 	justify-content: center;
 	align-items: center;
+	
+	&:hover {
+		background-color: ${brandPrimary};
+	}
 `;
 
 const Month = styled.div`
@@ -26,6 +31,12 @@ const Day = styled.div`
 	font-weight: bold;
 `;
 
+const mapStateToProps = function(state){
+	return {
+		language: state.language,
+	}
+}
+
 class DayElement extends Component {
 
 	constructor(props) {
@@ -35,11 +46,12 @@ class DayElement extends Component {
 	render() {
 
 		const day = this.props.day.getDate().toString().padStart(2, '0');
+		const dayOfWeek = this.props.day.toLocaleString(this.props.language, {  weekday: 'short' });
 
 		return (
 			<Grid item xs={4}>
 				<DayElementContainer>
-					<Month>{this.props.month.value}</Month>
+					<Month>{dayOfWeek}</Month>
 					<Day>{day}</Day>
 				</DayElementContainer>
 			</Grid>
@@ -47,4 +59,4 @@ class DayElement extends Component {
 	}
 }
 
-export default DayElement;
+export default connect(mapStateToProps)(DayElement);
