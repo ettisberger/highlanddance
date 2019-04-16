@@ -34,7 +34,7 @@ class Classes extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { classesEntries: [], loading: false};
+        this.state = { classesEntries: [],informationEntries: [], loading: false};
     }
 
 
@@ -43,7 +43,8 @@ class Classes extends Component {
 
         WordpressService.loadClasses(this.props.language).then(response => {
             this.setState({
-                classesEntries : response.data,
+                classesEntries : response.data.classes.class_calendar,
+                informationEntries : response.data.information.class_information,
                 loading: false
             })
         });
@@ -77,14 +78,6 @@ class Classes extends Component {
                         <PageHeader imageUrl={pageHeaderImage} title={title}/>
                     )}
                 </FormattedMessage>
-                {/*{ this.state.classesEntries.map((classesEntry, index) =>*/}
-                {/*    <Section even={index % 2 == 0} odd={index % 2 != 0} key={index}>*/}
-                {/*        <Inlay>*/}
-                {/*            <SectionTitle>{classesEntry.title}</SectionTitle>*/}
-                {/*            <Text dangerouslySetInnerHTML={{__html: classesEntry.content}}></Text>*/}
-                {/*        </Inlay>*/}
-                {/*    </Section>*/}
-                {/*)}*/}
                 <Section even>
                     <Inlay>
                         <SectionTitle>
@@ -95,6 +88,14 @@ class Classes extends Component {
                         </ClassesList>
                     </Inlay>
                 </Section>
+                { this.state.informationEntries.map((informationEntry, index) =>
+                    <Section even={index % 2 == 0} odd={index % 2 != 0} key={index}>
+                        <Inlay>
+                            <SectionTitle>{informationEntry.title}</SectionTitle>
+                            <Text dangerouslySetInnerHTML={{__html: informationEntry.content}}></Text>
+                        </Inlay>
+                    </Section>
+                )}
             </React.Fragment>
         )
     }
