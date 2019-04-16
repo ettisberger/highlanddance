@@ -34,15 +34,16 @@ class MonthElement extends Component {
 	}
 
 	getDateAsString(day) {
-		var day = new Date();
-		return "(" + day.getDate() + "." + day.getMonth() + "." + day.getFullYear() +")";
+		console.log(day);
+		var day = new Date(day);
+		return "(" + day.getDate() + "." + (day.getMonth() + 1) + "." + day.getFullYear() +")";
 	}
 
 	render() {
 		return (
 			<MonthContainer item xs={12} sm={6} >
 				<MonthItem>
-					<Month>{this.props.month.month.label}</Month>
+					<Month>{this.props.month.month[0].label}</Month>
 					<Grid container justify={'center'} spacing={32}>
 						{ this.props.month.days.map( (day, index) =>
 							<DayElement month={this.props.month.month} day={new Date(day.day)} key={index} onClick={() => this.clickedDay(day)}/>
