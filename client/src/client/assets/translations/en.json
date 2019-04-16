@@ -6,5 +6,8 @@
     "teacher": "TEACHER",
     "partner": "PARTNER",
     "contact": "CONTACT"
+  },
+  "text" : {
+    "daydetail" : "Description:"
   }
 }

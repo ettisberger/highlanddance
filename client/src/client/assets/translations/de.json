@@ -6,5 +6,8 @@
     "teacher": "TANZLEHRERIN",
     "partner": "PARTNER",
     "contact": "KONTAKT"
+  },
+  "text" : {
+    "daydetail" : "Bemerkung:"
   }
 }

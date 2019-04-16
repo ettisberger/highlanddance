@@ -22,13 +22,13 @@ const DayElementContainer = styled.div`
 
 const Month = styled.div`
 	text-transform: uppercase;
-	font-size: 16px;
+	font-size: 24px;
 	padding: 10px;
+	font-weight: bold;
 `;
 
 const Day = styled.div`
 	font-size: 24px;
-	font-weight: bold;
 `;
 
 const mapStateToProps = function(state){
@@ -50,7 +50,7 @@ class DayElement extends Component {
 
 		return (
 			<Grid item xs={4}>
-				<DayElementContainer>
+				<DayElementContainer onClick={this.props.onClick}>
 					<Month>{dayOfWeek}</Month>
 					<Day>{day}</Day>
 				</DayElementContainer>
