@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import Hidden from '@material-ui/core/Hidden'
 import {whiteColor, brandPrimary, Inlay, blackColor, brandSecondary} from '../../theme';
 import {FormattedMessage} from 'react-intl';
@@ -73,7 +73,7 @@ const LinkContainer = styled.div`
 	}
 `;
 
-const LinkButton = styled(Link)`
+const StyledButton = css`
 	margin-right: 20px;
 	padding: 10px;
 	color: ${whiteColor};
@@ -84,6 +84,14 @@ const LinkButton = styled(Link)`
 	&:hover {
 		background-color: ${brandSecondary};
 	}
+`;
+
+const LinkButton = styled(Link)`
+	${StyledButton};
+`;
+
+const ContactButton = styled.a`
+	${StyledButton};
 `;
 
 class PageHeader extends Component {
@@ -102,12 +110,12 @@ class PageHeader extends Component {
 					                        calendar_today
 				                        </i>
 			                        </LinkButton>
-			                        <LinkButton to={'classes'}>
+			                        <ContactButton href={`mailto:info@highlanddance.ch`}>
 				                        <FormattedMessage id="navigation.contact"/>
 				                        <i className="material-icons">
 					                        contact_mail
 				                        </i>
-			                        </LinkButton>
+			                        </ContactButton>
 		                        </LinkContainer>
 	                        </Inlay>
 						</PageHeaderBackground>
