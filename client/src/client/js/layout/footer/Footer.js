@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import theme, {accent1Color, brandSecondary, Inlay, whiteColor} from '../../theme';
 import Grid from '@material-ui/core/Grid'
 import Mailto from 'react-protected-mailto';
+import {CONTACT_MAIL} from '../../common/constants';
 
 const FooterWrapper = styled.div`
     position: absolute;
@@ -97,7 +98,7 @@ class Footer extends Component {
                                     <FooterTitle>Kontakt</FooterTitle>
                                     <p>
                                        <MailToEncrypted
-                                        email='info@highlanddance.ch'
+                                        email={CONTACT_MAIL}
                                         headers={
                                             {subject:'Kontaktaufnahme'}
                                         }/>

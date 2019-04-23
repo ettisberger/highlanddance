@@ -4,6 +4,7 @@ import Hidden from '@material-ui/core/Hidden'
 import {whiteColor, brandPrimary, Inlay, blackColor, brandSecondary} from '../../theme';
 import {FormattedMessage} from 'react-intl';
 import {Link, withRouter} from 'react-router-dom';
+import {CONTACT_MAIL} from '../../common/constants';
 
 const PagerHeaderWrapper = styled.header`
 	position: relative;
@@ -110,7 +111,7 @@ class PageHeader extends Component {
 					                        calendar_today
 				                        </i>
 			                        </LinkButton>
-			                        <ContactButton href={`mailto:info@highlanddance.ch`}>
+			                        <ContactButton href={`mailto:`+ CONTACT_MAIL}>
 				                        <FormattedMessage id="navigation.contact"/>
 				                        <i className="material-icons">
 					                        contact_mail

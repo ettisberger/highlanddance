@@ -1,24 +1,23 @@
 import axios from 'axios';
+import {API_URL, BASE_URL} from './constants';
 
-const baseUrl = 'http://localhost:8888/highlanddance/server/';
-const apiUrl = '/api/v1/';
 
 export async function loadHome(language) {
-    return await axios.get(baseUrl + language + apiUrl + 'home');
+    return await axios.get(BASE_URL + language + API_URL + 'home');
 }
 
 export async function loadAbout(language) {
-    return await axios.get(baseUrl + language + apiUrl + 'about');
+    return await axios.get(BASE_URL + language + API_URL + 'about');
 }
 
 export async function loadClasses(language) {
-    return await axios.get(baseUrl + language + apiUrl + 'classes');
+    return await axios.get(BASE_URL + language + API_URL + 'classes');
 }
 
 export async function loadTeacher(language) {
-    return await axios.get(baseUrl + language + apiUrl + 'teacher');
+    return await axios.get(BASE_URL + language + API_URL + 'teacher');
 }
 
 export async function loadPartner(language) {
-    return await axios.get(baseUrl + language + apiUrl + 'partner');
+    return await axios.get(BASE_URL + language + API_URL + 'partner');
 }
