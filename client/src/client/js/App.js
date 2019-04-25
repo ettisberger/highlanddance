@@ -11,6 +11,7 @@ import theme from './theme'
 import About from './about/About';
 import Teacher from './teacher/Teacher';
 import Classes from './classes/Classes';
+import Partner from './partner/Partner';
 
 const Main = styled.main`    
   // ${theme.breakpoints.down('sm')}{
@@ -34,7 +35,7 @@ class App extends React.Component {
                     <Route name="about" exact path="/about" component={About} />
                     <Route name="classes" exact path="/classes" component={Classes} />
                     <Route name="teacher" exact path="/teacher" component={Teacher} />
-                    <Route name="partner" exact path="/partner" component={About} />
+                    <Route name="partner" exact path="/partner" component={Partner} />
                 {/* footer inside of the main container because footers are bitches and dont behave */}
                 <Footer/>
                 </Main>

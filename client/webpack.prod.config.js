@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.config');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(commonConfig, {
     mode: 'production',
@@ -18,5 +19,8 @@ module.exports = merge(commonConfig, {
         new webpack.DefinePlugin(Object.assign(require('./src/config/config.json'))),
         //new CompressionPlugin(),
         //new BundleAnalyzerPlugin()
+        new Dotenv({
+            path: './.env.production'
+        })
     ]
 });

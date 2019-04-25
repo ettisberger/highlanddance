@@ -52,6 +52,6 @@ module.exports = {
                 from: 'src/client/assets/',
                 to: 'assets/',
             },
-        ]),
+        ])
     ]
 };
