@@ -69,9 +69,9 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <Hidden smUp>
-                    <MobileNavigationBar/>
-                </Hidden>
+                {/*<Hidden smUp>*/}
+                {/*    <MobileNavigationBar/>*/}
+                {/*</Hidden>*/}
                 <Hidden xsDown>
                     <HeaderBar>
                         <LanguageBar>

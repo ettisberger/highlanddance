@@ -5,31 +5,30 @@ import {whiteColor, brandPrimary, Inlay, blackColor, brandSecondary} from '../..
 import {FormattedMessage} from 'react-intl';
 import {Link, withRouter} from 'react-router-dom';
 import {CONTACT_MAIL} from '../../common/constants';
+import {createMuiTheme} from '@material-ui/core';
 
 const PagerHeaderWrapper = styled.header`
 	position: relative;
-	width: 120vw;
-	left: 50%;
-	transform: translateX(-50%);
    	
 	&:before {
 		position: absolute;
 		z-index: 0;
-		bottom: -5px;
+		bottom: -10px;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		background-color: ${brandSecondary};
-		border-radius: 0 0 50% 50%;
-		content: "";
-		left: 50px;
+		border-bottom-left-radius: 80% 15%;
+		border-bottom-right-radius: 80% 15%;
+  		content: "";
+		left: 75px;
 		animation: header-swell 7s ease -1.25s infinite;
 		opacity: .4;
 	}
 	
 	@keyframes header-swell {
 		0%, 100% {
-			transform:translateY(-20px);
+			transform:translateY(-10px);
 		}
 		
 		50% {
@@ -41,7 +40,8 @@ const PagerHeaderWrapper = styled.header`
 const PageHeaderBackground = styled.div`
     padding-top: 200px;
     padding-bottom: 200px;
-	border-radius: 0 0 50% 50%;
+	border-bottom-left-radius: 80% 15%;
+	border-bottom-right-radius: 80% 15%;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -51,6 +51,11 @@ const PageHeaderBackground = styled.div`
     color: ${whiteColor};
     display: flex;
     justify-content: center;
+    
+	${createMuiTheme().breakpoints.down('sm')}{
+    	padding-top: 0px;
+    }
+
 `;
 
 const PageHeaderTitle = styled.h1`
@@ -99,7 +104,7 @@ class PageHeader extends Component {
     render() {
         return (
             <React.Fragment>
-                <Hidden xsDown>
+                {/*<Hidden xsDown>*/}
                     <PagerHeaderWrapper>
 						<PageHeaderBackground imageUrl={this.props.imageUrl}>
 	                        <Inlay>
@@ -122,7 +127,7 @@ class PageHeader extends Component {
 						</PageHeaderBackground>
 
                     </PagerHeaderWrapper>
-                </Hidden>
+                {/*</Hidden>*/}
             </React.Fragment>
         )
     }
