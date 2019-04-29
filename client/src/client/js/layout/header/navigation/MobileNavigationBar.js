@@ -23,7 +23,6 @@ const Navigation = styled.nav`
     li a {
       display: block;
       padding: 20px 20px;
-      border-right: 1px solid #f4f4f4;
       text-decoration: none;
       color: white;
     }

@@ -49,7 +49,7 @@ class DayElement extends Component {
 		const dayOfWeek = this.props.day.toLocaleString(this.props.language, {  weekday: 'short' });
 
 		return (
-			<Grid item xs={4}>
+			<Grid item xs={6} sm={4}>
 				<DayElementContainer onClick={this.props.onClick}>
 					<Month>{dayOfWeek}</Month>
 					<Day>{day}</Day>

@@ -43,7 +43,7 @@ class MonthElement extends Component {
 			<MonthContainer item xs={12} sm={6} >
 				<MonthItem>
 					<Month>{this.props.month.month[0].label}</Month>
-					<Grid container justify={'center'} spacing={32}>
+					<Grid container justify={'flex-start'} spacing={32}>
 						{ this.props.month.days.map( (day, index) =>
 							<DayElement month={this.props.month.month} day={new Date(day.day)} key={index} onClick={() => this.clickedDay(day)}/>
 						) }

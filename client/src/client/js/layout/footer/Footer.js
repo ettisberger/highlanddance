@@ -63,7 +63,6 @@ const FooterBackground = styled.div`
     #highland-moving {
         animation: footer-swell 7s ease -1.25s infinite;
     }
-    }
 `;
 
 class Footer extends Component {
@@ -80,8 +79,8 @@ class Footer extends Component {
                                 <stop offset="100%" stopColor="#695cff" stopOpacity="1" />
                             </linearGradient>
                         </defs>
-                        <path id="highland-fix" fill="url(#highland)" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"/>
                         <path id="highland-moving" fill={brandSecondary} fillOpacity="0.3" d="M0 30 V12 Q40 15 55 12 T100 11 V30z"/>
+                        <path id="highland-fix" fill="url(#highland)" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"/>
                     </svg>
                     <FooterWrapper>
                         <Inlay>
