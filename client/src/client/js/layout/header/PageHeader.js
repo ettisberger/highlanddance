@@ -52,8 +52,9 @@ const PageHeaderBackground = styled.div`
     display: flex;
     justify-content: center;
     
-	${createMuiTheme().breakpoints.down('sm')}{
-    	padding-top: 0px;
+	${createMuiTheme().breakpoints.down('xs')}{
+    	padding-top: 100px;
+        padding-bottom: 100px;
     }
 
 `;
@@ -65,8 +66,15 @@ const PageHeaderTitle = styled.h1`
 	text-transform: uppercase;
 	font-size: 4rem;
 	text-shadow: 0px 1px 4px rgba(0,0,0,.8);
-	//font-family: 'Lora';
 	font-family: Georgia, Times, serif;
+	
+	${createMuiTheme().breakpoints.down('sm')}{
+		font-size: 3rem;
+    }	
+
+	${createMuiTheme().breakpoints.down('xs')}{
+		font-size: 3rem;
+    }
 `;
 
 const LinkContainer = styled.div`

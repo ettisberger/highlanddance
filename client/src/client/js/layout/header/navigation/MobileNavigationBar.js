@@ -1,157 +1,151 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import {withStyles} from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import HomeIcon from '@material-ui/icons/Home';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import Grid from '@material-ui/core/Grid/Grid';
+import styled from 'styled-components';
+import theme, {brandPrimary, brandSecondary, whiteColor} from '../../../theme';
+import {FormattedMessage} from 'react-intl';
 
-const drawerWidth = 240;
 
-const styles = theme => ({
-    root: {
-        display: 'flex',
-    },
-    appBar: {
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-    },
-    appBarShift: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    },
-    menuButton: {
-        marginLeft: 12,
-        marginRight: 20,
-    },
-    hide: {
-        display: 'none',
-    },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-    },
-    drawerPaper: {
-        width: drawerWidth,
-    },
-    drawerHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 8px',
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
-    },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing.unit * 3,
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginLeft: -drawerWidth,
-    },
-    contentShift: {
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginLeft: 0,
-    },
-});
 
-class MobileNavigationBar extends React.Component {
+const Navigation = styled.nav`
+    background-color: ${props => props.checked ? brandSecondary : "transparent"};
+    transition: background 0.1s ease-out;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      background-color: ${brandSecondary};
+    }
+    
+    li a {
+      display: block;
+      padding: 20px 20px;
+      border-right: 1px solid #f4f4f4;
+      text-decoration: none;
+      color: white;
+    }
+    
+    li a:hover {
+      background-color: ${whiteColor};
+      color: ${brandSecondary};
+    }
+        
+     .menu {
+      clear: both;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+    }
+        
+    .menu-icon {
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+      user-select: none;
+    }
+    
+    .menu-icon .navicon {
+      background: ${whiteColor};
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px;
+    }
+    
+    .menu-icon .navicon:before,
+    .menu-icon .navicon:after {
+      background: ${whiteColor};
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+    }
+    
+    .menu-icon .navicon:before {
+      top: 5px;
+    }
+    
+    .menu-icon .navicon:after {
+      top: -5px;
+    }
+        
+    .menu-btn {
+      display: none;
+    }
+    
+    .menu-btn:checked ~ .menu {
+      max-height: 240px;
+    }
+    
+    .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent;
+    }
+    
+    .menu-btn:checked ~ .menu-icon .navicon:before {
+      transform: rotate(-45deg);
+    }
+    
+    .menu-btn:checked ~ .menu-icon .navicon:after {
+      transform: rotate(45deg);
+    }
+    
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+      top: 0;
+    }
+`;
 
+const Logo = styled.img`
+    max-width: 100%; 
+    max-height: 50px;
+    float: left;
+    position: absolute;
+    padding: 5px 0px 5px 20px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+`;
+
+class MobileNavigationBar extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {open: false};
+        this.state = { checked: false};
     }
 
-    handleDrawerOpen = () => {
-        this.setState({ open: true });
-    };
-
-    handleDrawerClose = () => {
-        this.setState({ open: false });
-    };
+    // = () => same as this.clickedItem = this.clickedItem.bind(this);
+    clickedItem = () => {
+        this.setState(prevState => ({
+            checked: !prevState.checked
+        }));
+    }
 
     render() {
-        const { classes, theme } = this.props;
-        const { open } = this.state;
-
         return (
-            <div className={classes.root}>
-                <CssBaseline />
-                <AppBar
-                    position="fixed"
-                    className={classNames(classes.appBar, {
-                        [classes.appBarShift]: open,
-                    })}
-                >
-                    <Toolbar disableGutters={!open}>
-                        <IconButton
-                            color="inherit"
-                            aria-label="Open drawer"
-                            onClick={this.handleDrawerOpen}
-                            className={classNames(classes.menuButton, open && classes.hide)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" color="inherit" noWrap>
-                            Highlanddance
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <Drawer
-                    className={classes.drawer}
-                    variant="temporary"
-                    anchor="left"
-                    open={open}
-                    classes={{
-                        paper: classes.drawerPaper,
-                    }}
-                    onClick={this.handleDrawerClose}
-                >
-                    <div className={classes.drawerHeader}>
-                        <IconButton onClick={this.handleDrawerClose}>
-                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                        </IconButton>
-                    </div>
-                    <Divider />
-                    <List>
-                        <ListItem button key="Home">
-                            <ListItemIcon><HomeIcon/></ListItemIcon>
-                            <Link to={''}><ListItemText primary="Home" /></Link>
-                        </ListItem>
-                    </List>
-                </Drawer>
-            </div>
-        );
+            <Navigation checked={this.state.checked}>
+                <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>
+                <input className="menu-btn" type="checkbox" id="menu-btn" checked={this.state.checked} onChange={this.clickedItem}/>
+                <label className="menu-icon" htmlFor="menu-btn">
+                    <span className="navicon"></span>
+                </label>
+                <ul className="menu">
+                    <li><Link to={'about'} onClick={this.clickedItem}><FormattedMessage id="navigation.about"/></Link></li>
+                    <li><Link to={'classes'} onClick={this.clickedItem}><FormattedMessage id="navigation.classes"/></Link></li>
+                    <li><Link to={'teacher'} onClick={this.clickedItem}><FormattedMessage id="navigation.teacher"/></Link></li>
+                    <li><Link to={'partner'} onClick={this.clickedItem}><FormattedMessage id="navigation.partner"/></Link></li>
+                </ul>
+            </Navigation>
+        )
     }
 }
 
-MobileNavigationBar.propTypes = {
-    classes: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles, { withTheme: true })(MobileNavigationBar);
+export default MobileNavigationBar;
