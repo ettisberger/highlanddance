@@ -14,15 +14,11 @@ import Classes from './classes/Classes';
 import Partner from './partner/Partner';
 
 const Main = styled.main`    
-  // ${theme.breakpoints.down('sm')}{
-  //   margin-top: 56px; 
-  // }
-  
-  //margin-top: -212px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  overflow-x: hidden;
 `;
 
 class App extends React.Component {

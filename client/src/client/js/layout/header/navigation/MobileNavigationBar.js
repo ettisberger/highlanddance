@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import theme, {brandPrimary, brandSecondary, whiteColor} from '../../../theme';
 import {FormattedMessage} from 'react-intl';
 
-
-
 const Navigation = styled.nav`
     background-color: ${props => props.checked ? brandSecondary : "transparent"};
     transition: background 0.1s ease-out;

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
-import Hidden from '@material-ui/core/Hidden'
-import {whiteColor, brandPrimary, Inlay, blackColor, brandSecondary} from '../../theme';
+import theme, {whiteColor, brandPrimary, Inlay, blackColor, brandSecondary} from '../../theme';
 import {FormattedMessage} from 'react-intl';
 import {Link, withRouter} from 'react-router-dom';
 import {CONTACT_MAIL} from '../../common/constants';
@@ -24,6 +23,10 @@ const PagerHeaderWrapper = styled.header`
 		left: 75px;
 		animation: header-swell 7s ease -1.25s infinite;
 		opacity: .4;
+		
+	  	${theme.breakpoints.down('xs')}{
+			bottom: 0px;
+  		}
 	}
 	
 	@keyframes header-swell {
