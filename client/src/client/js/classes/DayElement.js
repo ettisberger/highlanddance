@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import connect from 'react-redux/es/connect/connect';
+import * as PropTypes from 'prop-types';
 import { brandPrimary, brandSecondary, whiteColor } from '../theme';
 
 const DayElementContainer = styled.div`
@@ -31,15 +32,12 @@ const Day = styled.div`
   font-size: 24px;
 `;
 
-const mapStateToProps = function (state) {
-  return {
-    language: state.language,
-  };
-};
+const mapStateToProps = state => ({
+  language: state.language,
+});
 
 // eslint-disable-next-line react/prefer-stateless-function
 class DayElement extends Component {
-
   render() {
     const day = this.props.day.getDate().toString().padStart(2, '0');
     const dayOfWeek = this.props.day.toLocaleString(this.props.language, { weekday: 'short' });
@@ -54,5 +52,11 @@ class DayElement extends Component {
     );
   }
 }
+
+DayElement.propTypes = {
+  language: PropTypes.string.isRequired,
+  day: PropTypes.instanceOf(Date).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps)(DayElement);

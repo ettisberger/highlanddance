@@ -29,7 +29,7 @@ class MonthElement extends Component {
     this.state = { clickedDay: undefined, showDayDetail: false };
   }
 
-  getDateAsString(day) {
+  static getDateAsString(day) {
     const dayDate = new Date(day);
     return `(${dayDate.getDate()}.${dayDate.getMonth() + 1}.${dayDate.getFullYear()})`;
   }
@@ -43,7 +43,7 @@ class MonthElement extends Component {
       <MonthContainer item xs={12} sm={6}>
         <MonthItem>
           <Month>{this.props.month.month[0].label}</Month>
-          <Grid container justify="flex-start" spacing={32}>
+          <Grid container justify="flex-start" spacing={8}>
             {this.props.month.days.map((day, index) =>
               <DayElement
                 month={this.props.month.month}

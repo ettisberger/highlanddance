@@ -82,7 +82,7 @@ class Classes extends Component {
             <SectionTitle>
               <FormattedMessage id="navigation.classes"/>
             </SectionTitle>
-            <ClassesList container spacing={32} justify="flex-start">
+            <ClassesList container spacing={8} justify="flex-start">
               {this.state.classesEntries.map((clazz, index) => <MonthElement
                 month={clazz}
                 key={index}
