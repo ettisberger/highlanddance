@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import Grid from '@material-ui/core/Grid/Grid';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import theme, {brandPrimary, brandSecondary, whiteColor} from '../../../theme';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
+import { brandSecondary, whiteColor } from '../../../theme';
 
 const Navigation = styled.nav`
-    background-color: ${props => props.checked ? brandSecondary : "transparent"};
+    background-color: ${props => (props.checked ? brandSecondary : 'transparent')};
     transition: background 0.1s ease-out;
     position: absolute;
     width: 100%;
@@ -102,47 +101,81 @@ const Navigation = styled.nav`
 `;
 
 const Logo = styled.img`
-    max-width: 100%; 
-    max-height: 50px;
-    float: left;
-    position: absolute;
-    padding: 5px 0px 5px 20px;
-    top: 0;
-    left: 0;
-    bottom: 0;
+  max-width: 100%; 
+  max-height: 50px;
+  float: left;
+  position: absolute;
+  padding: 5px 0px 5px 20px;
+  top: 0;
+  left: 0;
+  bottom: 0;
 `;
 
 class MobileNavigationBar extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = { checked: false};
-    }
+    this.state = { checked: false };
+  }
 
-    // = () => same as this.clickedItem = this.clickedItem.bind(this);
-    clickedItem = () => {
-        this.setState(prevState => ({
-            checked: !prevState.checked
-        }));
-    }
+  // = () => same as this.clickedItem = this.clickedItem.bind(this);
+  clickedItem = () => {
+    this.setState(prevState => ({
+      checked: !prevState.checked,
+    }));
+  }
 
-    render() {
-        return (
-            <Navigation checked={this.state.checked}>
-                <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>
-                <input className="menu-btn" type="checkbox" id="menu-btn" checked={this.state.checked} onChange={this.clickedItem}/>
-                <label className="menu-icon" htmlFor="menu-btn">
-                    <span className="navicon"></span>
-                </label>
-                <ul className="menu">
-                    <li><Link to={'about'} onClick={this.clickedItem}><FormattedMessage id="navigation.about"/></Link></li>
-                    <li><Link to={'classes'} onClick={this.clickedItem}><FormattedMessage id="navigation.classes"/></Link></li>
-                    <li><Link to={'teacher'} onClick={this.clickedItem}><FormattedMessage id="navigation.teacher"/></Link></li>
-                    <li><Link to={'partner'} onClick={this.clickedItem}><FormattedMessage id="navigation.partner"/></Link></li>
-                </ul>
-            </Navigation>
-        )
-    }
+  render() {
+    return (
+      <Navigation checked={this.state.checked}>
+        <Link to=""><Logo src="/assets/images/logo_header.png" /></Link>
+        <input
+          className="menu-btn"
+          type="checkbox"
+          id="menu-btn"
+          checked={this.state.checked}
+          onChange={this.clickedItem}
+        />
+        <label className="menu-icon" htmlFor="menu-btn">
+          <span className="navicon" />
+        </label>
+        <ul className="menu">
+          <li>
+            <Link
+              to="about"
+              onClick={this.clickedItem}
+            >
+              <FormattedMessage id="navigation.about" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="classes"
+              onClick={this.clickedItem}
+            >
+              <FormattedMessage id="navigation.classes" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="teacher"
+              onClick={this.clickedItem}
+            >
+              <FormattedMessage id="navigation.teacher" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="partner"
+              onClick={this.clickedItem}
+            >
+              <FormattedMessage id="navigation.partner" />
+            </Link>
+          </li>
+        </ul>
+      </Navigation>
+    );
+  }
 }
 
 export default MobileNavigationBar;

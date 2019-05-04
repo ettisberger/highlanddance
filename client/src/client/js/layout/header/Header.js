@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
-import theme, {brandPrimary, Inlay, whiteColor} from '../../theme';
+import Hidden from '@material-ui/core/Hidden';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import createMuiTheme from '@material-ui/core/es/styles/createMuiTheme';
+import theme, { brandPrimary, Inlay, whiteColor } from '../../theme';
 import NavigationBar from './navigation/NavigationBar';
 import MobileNavigationBar from './navigation/MobileNavigationBar';
-import Hidden from '@material-ui/core/Hidden'
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {changeLanguage} from '../../actions/actions';
-import createMuiTheme from '@material-ui/core/es/styles/createMuiTheme';
+import { changeLanguage } from '../../actions/actions';
 
 const HeaderBar = styled.header`
 	${createMuiTheme().breakpoints.up('lg')}{
@@ -53,43 +53,43 @@ const Logo = styled.img`
   }
 `;
 
-const mapStateToProps = function(state){
-    return {
-        language: state.language,
-    }
-}
+const mapStateToProps = function (state) {
+  return {
+    language: state.language,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-    changeLanguage : language => {
-        dispatch(changeLanguage(language));
-    }
-})
+  changeLanguage: (language) => {
+    dispatch(changeLanguage(language));
+  },
+});
 
 class Header extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Hidden smUp>
-                    <MobileNavigationBar/>
-                </Hidden>
-                <Hidden xsDown>
-                    <HeaderBar>
-                        <LanguageBar>
-                            <a href="#" style={this.props.language === 'de' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('de')}>deutsch</a>
-                            <span> | </span>
-                            <a href="#" style={this.props.language === 'en' ? {fontWeight: 'bold'} : {}} onClick={() => this.props.changeLanguage('en')}>english</a>
-                        </LanguageBar>
-                        <Grid container spacing={16}>
-                            <Grid item xs={3}>
-                                <Link to={''}><Logo src={'/assets/images/logo_header.png'}/></Link>
-                            </Grid>
-                            <NavigationBar/>
-                        </Grid>
-                    </HeaderBar>
-                </Hidden>
-            </React.Fragment>
-        )
-    }
+  render() {
+    return (
+      <React.Fragment>
+        <Hidden smUp>
+          <MobileNavigationBar />
+        </Hidden>
+        <Hidden xsDown>
+          <HeaderBar>
+            <LanguageBar>
+              <a href="#" style={this.props.language === 'de' ? { fontWeight: 'bold' } : {}} onClick={() => this.props.changeLanguage('de')}>deutsch</a>
+              <span> | </span>
+              <a href="#" style={this.props.language === 'en' ? { fontWeight: 'bold' } : {}} onClick={() => this.props.changeLanguage('en')}>english</a>
+            </LanguageBar>
+            <Grid container spacing={16}>
+              <Grid item xs={3}>
+                <Link to=""><Logo src="/assets/images/logo_header.png" /></Link>
+              </Grid>
+              <NavigationBar />
+            </Grid>
+          </HeaderBar>
+        </Hidden>
+      </React.Fragment>
+    );
+  }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

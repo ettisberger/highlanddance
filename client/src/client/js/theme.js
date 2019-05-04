@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'; // v1.x
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components';
 
 export const backgroundColor = '#fbf9f7';
 export const brandPrimary = '#25408f';
@@ -43,7 +43,7 @@ export const Section = styled.section`
     `}
 `;
 
-export const SectionTitle = styled.h2 `
+export const SectionTitle = styled.h2`
   text-align: center;
   color: ${brandPrimary};
 `;
@@ -53,13 +53,13 @@ export const LoadingPlaceholder = styled.div`
 `;
 
 export default createMuiTheme({
-    typography: {
-        useNextVariants: true,
+  typography: {
+    useNextVariants: true,
+  },
+  palette: {
+    primary: {
+      main: brandPrimary,
+      contrastText: accent1Color,
     },
-    palette: {
-        primary: {
-            main: brandPrimary,
-            contrastText: accent1Color,
-        },
-    },
+  },
 });

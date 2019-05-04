@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid/Grid';
 import styled from 'styled-components';
-import {brandPrimary, whiteColor} from '../../../theme';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
+import { whiteColor } from '../../../theme';
 
 const NavItem = styled.div`
   color: ${whiteColor};
@@ -42,30 +42,30 @@ const NavItem = styled.div`
       transform: scaleX(1);
     }
   }
-`
+`;
 
 class NavigationBar extends Component {
-    render() {
-        return (
-                <Grid component={'nav'} container item xs={9} justify={'flex-end'} alignItems={'center'}>
-                    <Grid item xs={2}>
-                        <NavItem><Link to={''}><FormattedMessage id="navigation.home"/></Link></NavItem>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <NavItem><Link to={'about'}><FormattedMessage id="navigation.about"/></Link></NavItem>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <NavItem><Link to={'classes'}><FormattedMessage id="navigation.classes"/></Link></NavItem>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <NavItem><Link to={'teacher'}><FormattedMessage id="navigation.teacher"/></Link></NavItem>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <NavItem><Link to={'partner'}><FormattedMessage id="navigation.partner"/></Link></NavItem>
-                    </Grid>
-                </Grid>
-        )
-    }
+  render() {
+    return (
+      <Grid component="nav" container item xs={9} justify="flex-end" alignItems="center">
+        <Grid item xs={2}>
+          <NavItem><Link to=""><FormattedMessage id="navigation.home"/></Link></NavItem>
+        </Grid>
+        <Grid item xs={2}>
+          <NavItem><Link to="about"><FormattedMessage id="navigation.about"/></Link></NavItem>
+        </Grid>
+        <Grid item xs={2}>
+          <NavItem><Link to="classes"><FormattedMessage id="navigation.classes"/></Link></NavItem>
+        </Grid>
+        <Grid item xs={2}>
+          <NavItem><Link to="teacher"><FormattedMessage id="navigation.teacher"/></Link></NavItem>
+        </Grid>
+        <Grid item xs={2}>
+          <NavItem><Link to="partner"><FormattedMessage id="navigation.partner"/></Link></NavItem>
+        </Grid>
+      </Grid>
+    );
+  }
 }
 
 export default NavigationBar;
