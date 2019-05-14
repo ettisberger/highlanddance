@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import * as PropTypes from 'prop-types';
-import DayElement from './DayElement.js';
+import DayElement from './DayElement';
 import { backgroundColor, brandPrimary } from '../theme';
 
 const MonthContainer = styled(Grid)`
@@ -56,7 +56,7 @@ class MonthElement extends Component {
           <DayDetail hidden={!this.state.showDayDetail}>
             <FormattedMessage id="text.description" />
             {' '}
-            {this.state.clickedDay ? `${this.getDateAsString(this.state.clickedDay.day)} ${this.state.clickedDay.description}` : ''}
+            {this.state.clickedDay ? `${MonthElement.getDateAsString(this.state.clickedDay.day)} ${this.state.clickedDay.description}` : ''}
           </DayDetail>
         </MonthItem>
       </MonthContainer>

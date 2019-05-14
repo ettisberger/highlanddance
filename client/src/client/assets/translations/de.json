@@ -8,6 +8,8 @@
     "contact": "KONTAKT"
   },
   "text" : {
-    "description" : "Bemerkung"
+    "description" : "Bemerkung",
+    "compass" : "Kompass",
+    "contact" : "Kontakt"
   }
 }
