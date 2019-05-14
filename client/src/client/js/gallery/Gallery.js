@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import Grid from '@material-ui/core/Grid';
-import { Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
-
 import PageHeader from '../layout/header/PageHeader';
 import pageHeaderImage from '../../assets/images/header_background_3.jpg';
 import * as WordpressService from '../common/wordpressService';
+import { Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
+import GridGallery from 'react-photo-gallery';
+import Lightbox from 'react-images';
 
 const mapStateToProps = function (state) {
   return {
@@ -20,9 +19,13 @@ class Gallery extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { galleryEntries: [], loading: false };
-  }
+    this.state = { galleryEntries: [], loading: false, currentImage: 0 };
 
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
+  }
 
   componentDidMount() {
     this.setState({ loading: true });
@@ -35,7 +38,35 @@ class Gallery extends Component {
     });
   }
 
+  openLightbox(event, obj) {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true,
+    });
+  }
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false,
+    });
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1,
+    });
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1,
+    });
+  }
+
   render() {
+    // const photos = this.state.galleryEntries.map(image => ({ src: image.url, thumbnail: image.sizes.medium, thumbnailWidth: image.sizes['medium-width'], thumbnailHeight: image.sizes['medium-height'], isSelected: false }));
+    const photos = this.state.galleryEntries.map(image => ({ src: image.url, width: image.width, height: image.height}));
+
+    console.log(photos);
+
     if (this.state.loading) {
       return (
         <React.Fragment>
@@ -68,13 +99,15 @@ class Gallery extends Component {
             <SectionTitle>
               <FormattedMessage id="navigation.gallery" />
             </SectionTitle>
-            <Grid container spacing="8" justify="flex-start">
-              {this.state.galleryEntries.map((clazz, index) =>
-                <div>
-                  Test
-                {index}
-              </div>)}
-            </Grid>
+            <GridGallery photos={photos} onClick={this.openLightbox} />
+            <Lightbox
+              images={photos}
+              onClose={this.closeLightbox}
+              onClickPrev={this.gotoPrevious}
+              onClickNext={this.gotoNext}
+              currentImage={this.state.currentImage}
+              isOpen={this.state.lightboxIsOpen}
+            />
           </Inlay>
         </Section>
       </React.Fragment>
