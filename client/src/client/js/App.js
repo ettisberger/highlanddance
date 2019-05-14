@@ -10,7 +10,7 @@ import Home from './home/Home';
 import About from './about/About';
 import Teacher from './teacher/Teacher';
 import Classes from './classes/Classes';
-import Partner from './partner/Partner';
+import Gallery from './gallery/Gallery';
 
 const Main = styled.main`    
   position: absolute;
@@ -31,7 +31,7 @@ class App extends React.Component {
           <Route name="about" exact path="/about" component={About} />
           <Route name="classes" exact path="/classes" component={Classes} />
           <Route name="teacher" exact path="/teacher" component={Teacher} />
-          <Route name="partner" exact path="/partner" component={Partner} />
+          <Route name="gallery" exact path="/gallery" component={Gallery} />
           {/* footer inside of the main container because footers are bitches and dont behave */}
           <Footer />
         </Main>

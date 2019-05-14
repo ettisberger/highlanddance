@@ -166,10 +166,10 @@ class MobileNavigationBar extends Component {
           </li>
           <li>
             <Link
-              to="partner"
+              to="gallery"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.partner" />
+              <FormattedMessage id="navigation.gallery" />
             </Link>
           </li>
         </ul>

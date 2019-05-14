@@ -21,3 +21,7 @@ export async function loadTeacher(language) {
 export async function loadPartner(language) {
   return axios.get(`${BASE_URL + language + API_URL}partner`);
 }
+
+export async function loadGallery(language) {
+  return axios.get(`${BASE_URL + language + API_URL}gallery`);
+}

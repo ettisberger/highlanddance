@@ -61,7 +61,7 @@ class NavigationBar extends Component {
           <NavItem><Link to="teacher"><FormattedMessage id="navigation.teacher"/></Link></NavItem>
         </Grid>
         <Grid item xs={2}>
-          <NavItem><Link to="partner"><FormattedMessage id="navigation.partner"/></Link></NavItem>
+          <NavItem><Link to="gallery"><FormattedMessage id="navigation.gallery"/></Link></NavItem>
         </Grid>
       </Grid>
     );

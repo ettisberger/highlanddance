@@ -4,19 +4,11 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Grid from '@material-ui/core/Grid';
-import { brandPrimary, Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
+import { Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 
 import PageHeader from '../layout/header/PageHeader';
 import pageHeaderImage from '../../assets/images/header_background_3.jpg';
 import * as WordpressService from '../common/wordpressService';
-
-const Text = styled.p`
-  line-height: 1.4;
-  
-  a {
-    color: ${brandPrimary};
-  }
-`;
 
 const mapStateToProps = function (state) {
   return {
@@ -24,20 +16,20 @@ const mapStateToProps = function (state) {
   };
 };
 
-class Partner extends Component {
+class Gallery extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { partnerEntries: [], loading: false };
+    this.state = { galleryEntries: [], loading: false };
   }
 
 
   componentDidMount() {
     this.setState({ loading: true });
 
-    WordpressService.loadPartner(this.props.language).then((response) => {
+    WordpressService.loadGallery(this.props.language).then((response) => {
       this.setState({
-        partnerEntries: response.data,
+        galleryEntries: response.data,
         loading: false,
       });
     });
@@ -48,10 +40,10 @@ class Partner extends Component {
       return (
         <React.Fragment>
           <Helmet>
-            <title>Partner</title>
-            <meta name="Description" content="Partner, Highland Dancing Basel" />
+            <title>Gallerie</title>
+            <meta name="Description" content="Galerie, Highland Dancing Basel" />
           </Helmet>
-          <FormattedMessage id="navigation.partner">
+          <FormattedMessage id="navigation.gallery">
             {title => (
               <PageHeader imageUrl={pageHeaderImage} title={title} />
             )}
@@ -66,7 +58,7 @@ class Partner extends Component {
           <title>Partner</title>
           <meta name="Description" content="Partner, Highland Dancing Basel" />
         </Helmet>
-        <FormattedMessage id="navigation.partner">
+        <FormattedMessage id="navigation.gallery">
           {title => (
             <PageHeader imageUrl={pageHeaderImage} title={title} />
           )}
@@ -74,11 +66,12 @@ class Partner extends Component {
         <Section even>
           <Inlay>
             <SectionTitle>
-              <FormattedMessage id="navigation.partner" />
+              <FormattedMessage id="navigation.gallery" />
             </SectionTitle>
-            <Grid container spacing={32} justify="flex-start">
-              {this.state.partnerEntries.map((clazz, index) => <div>
-Test
+            <Grid container spacing="8" justify="flex-start">
+              {this.state.galleryEntries.map((clazz, index) =>
+                <div>
+                  Test
                 {index}
               </div>)}
             </Grid>
@@ -89,4 +82,4 @@ Test
   }
 }
 
-export default connect(mapStateToProps)(Partner);
+export default connect(mapStateToProps)(Gallery);
