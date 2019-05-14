@@ -62,10 +62,7 @@ class Gallery extends Component {
   }
 
   render() {
-    // const photos = this.state.galleryEntries.map(image => ({ src: image.url, thumbnail: image.sizes.medium, thumbnailWidth: image.sizes['medium-width'], thumbnailHeight: image.sizes['medium-height'], isSelected: false }));
-    const photos = this.state.galleryEntries.map(image => ({ src: image.url, width: image.width, height: image.height}));
-
-    console.log(photos);
+    const photos = this.state.galleryEntries.map(image => ({ src: image.url, width: image.width, height: image.height }));
 
     if (this.state.loading) {
       return (
