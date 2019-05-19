@@ -93,7 +93,7 @@ class Header extends Component {
               </a>
             </LanguageBar>
             <Grid container spacing={8}>
-              <Grid item xs={3}>
+              <Grid item xs={2}>
                 <Link to=""><Logo src="/assets/images/logo_header.png" /></Link>
               </Grid>
               <NavigationBar />
