@@ -49,7 +49,7 @@ class Teacher extends Component {
         <React.Fragment>
           <Helmet>
             <title>Home</title>
-            <meta name="Description" content="Tanzlehrerin, Teacher, Highland Dancing Basel"/>
+            <meta name="Tanzlehrerin - Highland Dancing Basel" content="Carol ist Mitgliederin der Scottish Dance Teachers‘ Association, einer von drei Vereinen, der vom Scottish Official Board of Highland Dancing anerkannt ist." />
           </Helmet>
           <FormattedMessage id="navigation.teacher">
             {title => (
@@ -64,7 +64,7 @@ class Teacher extends Component {
       <React.Fragment>
         <Helmet>
           <title>Teacher</title>
-          <meta name="Description" content="Tanzlehrerin, Teacher, Highland Dancing Basel"/>
+          <meta name="Tanzlehrerin - Highland Dancing Basel" content="Carol ist Mitgliederin der Scottish Dance Teachers‘ Association, einer von drei Vereinen, der vom Scottish Official Board of Highland Dancing anerkannt ist." />
         </Helmet>
         <FormattedMessage id="navigation.teacher">
           {title => (

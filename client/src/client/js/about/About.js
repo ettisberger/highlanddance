@@ -52,7 +52,7 @@ class About extends Component {
         <React.Fragment>
           <Helmet>
             <title>Home</title>
-            <meta name="Description" content="Über uns, About, Highland Dancing Basel" />
+            <meta name="Über uns - Highland Dancing Basel" content="Highland Dancing stammt aus Schottland und ist eine herausfordende Tanzart, welche viel Kraft, Koordination und Disziplin benötigt. Ursprünglich war es Fitness Training für schottischen Soldaten und war ausschliesslich für Männer bestimmt." />
           </Helmet>
           <FormattedMessage id="navigation.about">
             {title => (<PageHeader imageUrl={pageHeaderImage} title={title} />)}
@@ -65,7 +65,7 @@ class About extends Component {
       <React.Fragment>
         <Helmet>
           <title>About</title>
-          <meta name="Description" content="Über uns, About, Highland Dancing Basel" />
+          <meta name="Über uns - Highland Dancing Basel" content="Highland Dancing stammt aus Schottland und ist eine herausfordende Tanzart, welche viel Kraft, Koordination und Disziplin benötigt. Ursprünglich war es Fitness Training für schottischen Soldaten und war ausschliesslich für Männer bestimmt." />
         </Helmet>
         <FormattedMessage id="navigation.about">
           {title => (<PageHeader imageUrl={pageHeaderImage} title={title} />)}

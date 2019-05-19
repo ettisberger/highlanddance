@@ -55,7 +55,7 @@ class Classes extends Component {
         <React.Fragment>
           <Helmet>
             <title>Classes</title>
-            <meta name="Description" content="Stunden, Classes, Highland Dancing Basel"/>
+            <meta name="Stunden - Highland Dancing Basel" content="Erhalten Sie eine Übersicht über unsere aktuellen Stunden und Kurse von Highland Dancing Basel." />
           </Helmet>
           <FormattedMessage id="navigation.classes">
             {title => (
@@ -70,7 +70,7 @@ class Classes extends Component {
       <React.Fragment>
         <Helmet>
           <title>Classes</title>
-          <meta name="Description" content="Stunden, Classes, Highland Dancing Basel"/>
+          <meta name="Stunden - Highland Dancing Basel" content="Erhalten Sie eine Übersicht über unsere aktuellen Stunden und Kurse von Highland Dancing Basel." />
         </Helmet>
         <FormattedMessage id="navigation.classes">
           {title => (

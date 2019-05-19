@@ -43,7 +43,7 @@ class Home extends Component {
         <React.Fragment>
           <Helmet>
             <title>Home</title>
-            <meta name="Description" content="Startseite, Home, Highland Dancing Basel" />
+            <meta name="Startseite - Highland Dancing Basel" content="Willkommen auf der Webseite von Highland Dancing Basel." />
           </Helmet>
           <PageHeader imageUrl={pageHeaderImage} title="School of Highland Dancing Basel" />
           <LoadingPlaceholder />
@@ -54,7 +54,7 @@ class Home extends Component {
       <React.Fragment>
         <Helmet>
           <title>Home</title>
-          <meta name="Description" content="Startseite, Home, Highland Dancing Basel" />
+          <meta name="Startseite - Highland Dancing Basel" content="Willkommen auf der Webseite von Highland Dancing Basel." />
         </Helmet>
         <PageHeader imageUrl={pageHeaderImage} title="School of Highland Dancing Basel" />
 

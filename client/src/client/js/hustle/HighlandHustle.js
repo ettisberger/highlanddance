@@ -52,7 +52,7 @@ class HighlandHustle extends Component {
         <React.Fragment>
           <Helmet>
             <title>Highland Hustle</title>
-            <meta name="Description" content="Highland Hustle, Highland Dancing Basel" />
+            <meta name="Highland Hustle - Highland Dancing Basel" content="Mit Highland Hustle wird man fit und hat auch Spass dabei. Obwohl die Bewegungen aus Highland Dancing stammen, ist keine Tanzerfahrung nötig. Highland Hustle ist die ideale Sportart fit zu werden und den Körper zu stärken und tonen." />
           </Helmet>
           <FormattedMessage id="navigation.hustle">
             {title => (<PageHeader imageUrl={pageHeaderImage} title={title} />)}
@@ -65,7 +65,7 @@ class HighlandHustle extends Component {
       <React.Fragment>
         <Helmet>
           <title>Highland Hustle</title>
-          <meta name="Description" content="Highland Hustle, Highland Dancing Basel" />
+          <meta name="Highland Hustle - Highland Dancing Basel" content="Mit Highland Hustle wird man fit und hat auch Spass dabei. Obwohl die Bewegungen aus Highland Dancing stammen, ist keine Tanzerfahrung nötig. Highland Hustle ist die ideale Sportart fit zu werden und den Körper zu stärken und tonen." />
         </Helmet>
         <FormattedMessage id="navigation.hustle">
           {title => (<PageHeader imageUrl={pageHeaderImage} title={title} />)}

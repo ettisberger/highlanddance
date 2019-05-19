@@ -69,7 +69,7 @@ class Gallery extends Component {
         <React.Fragment>
           <Helmet>
             <title>Gallerie</title>
-            <meta name="Description" content="Galerie, Highland Dancing Basel" />
+            <meta name="Galerie - Highland Dancing Basel" content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen." />
           </Helmet>
           <FormattedMessage id="navigation.gallery">
             {title => (
@@ -84,7 +84,7 @@ class Gallery extends Component {
       <React.Fragment>
         <Helmet>
           <title>Partner</title>
-          <meta name="Description" content="Partner, Highland Dancing Basel" />
+          <meta name="Galerie - Highland Dancing Basel" content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen." />
         </Helmet>
         <FormattedMessage id="navigation.gallery">
           {title => (
