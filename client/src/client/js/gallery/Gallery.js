@@ -93,9 +93,6 @@ class Gallery extends Component {
         </FormattedMessage>
         <Section even>
           <Inlay>
-            <SectionTitle>
-              <FormattedMessage id="navigation.gallery" />
-            </SectionTitle>
             <GridGallery photos={photos} onClick={this.openLightbox} />
             <Lightbox
               images={photos}

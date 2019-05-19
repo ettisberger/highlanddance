@@ -15,9 +15,6 @@ import LanguageProvider from './LanguageProvider';
 // init localization
 addLocaleData([...de, ...en]);
 
-// Log the initial state
-console.log(store.getState());
-
 const renderApp = () => {
   render(
     <MuiThemeProvider theme={highlanddanceTheme}>

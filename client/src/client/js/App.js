@@ -11,6 +11,7 @@ import About from './about/About';
 import Teacher from './teacher/Teacher';
 import Classes from './classes/Classes';
 import Gallery from './gallery/Gallery';
+import HighlandHustle from './hustle/HighlandHustle';
 
 const Main = styled.main`    
   position: absolute;
@@ -29,6 +30,7 @@ class App extends React.Component {
         <Main>
           <Route name="home" exact path="/" component={Home} />
           <Route name="about" exact path="/about" component={About} />
+          <Route name="hustle" exact path="/hustle" component={HighlandHustle} />
           <Route name="classes" exact path="/classes" component={Classes} />
           <Route name="teacher" exact path="/teacher" component={Teacher} />
           <Route name="gallery" exact path="/gallery" component={Gallery} />

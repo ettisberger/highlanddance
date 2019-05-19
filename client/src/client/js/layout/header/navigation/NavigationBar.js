@@ -49,19 +49,22 @@ class NavigationBar extends Component {
     return (
       <Grid component="nav" container item xs={9} justify="flex-end" alignItems="center">
         <Grid item xs={2}>
-          <NavItem><Link to=""><FormattedMessage id="navigation.home"/></Link></NavItem>
+          <NavItem><Link to=""><FormattedMessage id="navigation.home" /></Link></NavItem>
         </Grid>
         <Grid item xs={2}>
-          <NavItem><Link to="about"><FormattedMessage id="navigation.about"/></Link></NavItem>
+          <NavItem><Link to="about"><FormattedMessage id="navigation.about" /></Link></NavItem>
         </Grid>
         <Grid item xs={2}>
-          <NavItem><Link to="classes"><FormattedMessage id="navigation.classes"/></Link></NavItem>
+          <NavItem><Link to="hustle"><FormattedMessage id="navigation.hustle" /></Link></NavItem>
         </Grid>
         <Grid item xs={2}>
-          <NavItem><Link to="teacher"><FormattedMessage id="navigation.teacher"/></Link></NavItem>
+          <NavItem><Link to="classes"><FormattedMessage id="navigation.classes" /></Link></NavItem>
         </Grid>
         <Grid item xs={2}>
-          <NavItem><Link to="gallery"><FormattedMessage id="navigation.gallery"/></Link></NavItem>
+          <NavItem><Link to="teacher"><FormattedMessage id="navigation.teacher" /></Link></NavItem>
+        </Grid>
+        <Grid item xs={2}>
+          <NavItem><Link to="gallery"><FormattedMessage id="navigation.gallery" /></Link></NavItem>
         </Grid>
       </Grid>
     );

@@ -10,6 +10,10 @@ export async function loadAbout(language) {
   return axios.get(`${BASE_URL + language + API_URL}about`);
 }
 
+export async function loadHighlandHustle(language) {
+  return axios.get(`${BASE_URL + language + API_URL}hustle`);
+}
+
 export async function loadClasses(language) {
   return axios.get(`${BASE_URL + language + API_URL}classes`);
 }
