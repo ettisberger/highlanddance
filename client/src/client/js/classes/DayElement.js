@@ -9,8 +9,8 @@ const DayElementContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: ${brandSecondary};
   color: ${whiteColor};
   justify-content: center;
@@ -43,7 +43,7 @@ class DayElement extends Component {
     const dayOfWeek = this.props.day.toLocaleString(this.props.language, { weekday: 'short' });
 
     return (
-      <Grid item xs={6} sm={4}>
+      <Grid item>
         <DayElementContainer onClick={this.props.onClick}>
           <Month>{dayOfWeek}</Month>
           <Day>{day}</Day>

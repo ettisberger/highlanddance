@@ -3,8 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import * as PropTypes from 'prop-types';
-import DayElement from './DayElement';
 import { backgroundColor, brandPrimary } from '../theme';
+import DaysElement from './DaysElement';
 
 const MonthContainer = styled(Grid)`
 `;
@@ -20,6 +20,10 @@ const Month = styled.h3`
 
 const DayDetail = styled.div`
   padding: 25px 10px 10px 10px;
+`;
+
+const MontDayContainer = styled(Grid)`
+  padding: 10px;
 `;
 
 class MonthElement extends Component {
@@ -38,21 +42,42 @@ class MonthElement extends Component {
     this.setState({ clickedDay: day, showDayDetail: true });
   }
 
+  groupBy = (list) => {
+    const map = new Map();
+    list.forEach((item) => {
+      const key = new Date(item.day).toLocaleString(this.props.language, { weekday: 'short' });
+      const collection = map.get(key);
+      if (!collection) {
+        map.set(key, [item]);
+      } else {
+        collection.push(item);
+      }
+    });
+    return map;
+  }
+
   render() {
+
+    const dateMap = this.groupBy(this.props.month.days);
+
+    const dayContainerElements = () => {
+      const elements = [];
+
+      dateMap.forEach((value, key) => {
+        // eslint-disable-next-line react/no-array-index-key
+        elements.push(<DaysElement month={this.props.month} days={value} key={key} clickedDay={this.clickedDay} />);
+      })
+
+      return elements;
+    }
+
     return (
       <MonthContainer item xs={12} sm={6}>
         <MonthItem>
           <Month>{this.props.month.month[0].label}</Month>
-          <Grid container justify="flex-start" spacing={8}>
-            {this.props.month.days.map((day, index) =>
-              <DayElement
-                month={this.props.month.month}
-                day={new Date(day.day)}
-                key={index}
-                onClick={() => this.clickedDay(day)}
-              />
-            )}
-          </Grid>
+          <MontDayContainer container justify="space-around" >
+            { dayContainerElements() }
+          </MontDayContainer>
           <DayDetail hidden={!this.state.showDayDetail}>
             <FormattedMessage id="text.description" />
             {' '}

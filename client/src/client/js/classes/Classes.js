@@ -74,13 +74,13 @@ class Classes extends Component {
         </Helmet>
         <FormattedMessage id="navigation.classes">
           {title => (
-            <PageHeader imageUrl={pageHeaderImage} title={title}/>
+            <PageHeader imageUrl={pageHeaderImage} title={title} />
           )}
         </FormattedMessage>
         <Section even>
           <Inlay>
             <SectionTitle>
-              <FormattedMessage id="navigation.classes"/>
+              <FormattedMessage id="navigation.classes" />
             </SectionTitle>
             <ClassesList container spacing={8} justify="flex-start">
               {this.state.classesEntries.map((clazz, index) => <MonthElement
