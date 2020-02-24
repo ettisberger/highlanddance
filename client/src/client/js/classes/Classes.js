@@ -53,34 +53,44 @@ class Classes extends Component {
     if (this.state.loading) {
       return (
         <React.Fragment>
-          <Helmet>
-            <title>Classes</title>
-            <meta name="Stunden - Highland Dancing Basel" content="Erhalten Sie eine Übersicht über unsere aktuellen Stunden und Kurse von Highland Dancing Basel." />
-          </Helmet>
+          <FormattedMessage id="navigation.classes">
+            {(title) => (
+              <Helmet>
+                <title>{title}</title>
+                <meta name="Stunden - Highland Dancing Basel"
+                      content="Erhalten Sie eine Übersicht über unsere aktuellen Stunden und Kurse von Highland Dancing Basel."/>
+              </Helmet>
+            )}
+          </FormattedMessage>
           <FormattedMessage id="navigation.classes">
             {title => (
               <PageHeader imageUrl={pageHeaderImage} title={title}/>
             )}
           </FormattedMessage>
-          <LoadingPlaceholder />
+          <LoadingPlaceholder/>
         </React.Fragment>
       );
     }
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Classes</title>
-          <meta name="Stunden - Highland Dancing Basel" content="Erhalten Sie eine Übersicht über unsere aktuellen Stunden und Kurse von Highland Dancing Basel." />
-        </Helmet>
+        <FormattedMessage id="navigation.classes">
+          {(title) => (
+            <Helmet>
+              <title>{title}</title>
+              <meta name="Stunden - Highland Dancing Basel"
+                    content="Erhalten Sie eine Übersicht über unsere aktuellen Stunden und Kurse von Highland Dancing Basel."/>
+            </Helmet>
+          )}
+        </FormattedMessage>
         <FormattedMessage id="navigation.classes">
           {title => (
-            <PageHeader imageUrl={pageHeaderImage} title={title} />
+            <PageHeader imageUrl={pageHeaderImage} title={title}/>
           )}
         </FormattedMessage>
         <Section even>
           <Inlay>
             <SectionTitle>
-              <FormattedMessage id="navigation.classes" />
+              <FormattedMessage id="navigation.classes"/>
             </SectionTitle>
             <ClassesList container spacing={8} justify="flex-start">
               {this.state.classesEntries.map((clazz, index) => <MonthElement
@@ -94,7 +104,7 @@ class Classes extends Component {
           <Section even={index % 2 === 0} odd={index % 2 !== 0} key={index}>
             <Inlay>
               <SectionTitle>{informationEntry.title}</SectionTitle>
-              <Text dangerouslySetInnerHTML={{ __html: informationEntry.content }} />
+              <Text dangerouslySetInnerHTML={{ __html: informationEntry.content }}/>
             </Inlay>
           </Section>
         )}

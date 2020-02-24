@@ -56,6 +56,12 @@ class MonthElement extends Component {
     return map;
   }
 
+  getMonth = (month) => {
+    const dynamicProps = { id: `months.${month.value}`};
+
+    return (<FormattedMessage {...dynamicProps}/>);
+  };
+
   render() {
 
     const dateMap = this.groupBy(this.props.month.days);
@@ -65,7 +71,10 @@ class MonthElement extends Component {
 
       dateMap.forEach((value, key) => {
         // eslint-disable-next-line react/no-array-index-key
-        elements.push(<DaysElement month={this.props.month} days={value} key={key} clickedDay={this.clickedDay} />);
+        elements.push(<DaysElement month={this.props.month}
+                                   days={value}
+                                   key={key}
+                                   clickedDay={this.clickedDay}/>);
       })
 
       return elements;
@@ -74,12 +83,12 @@ class MonthElement extends Component {
     return (
       <MonthContainer item xs={12} sm={6}>
         <MonthItem>
-          <Month>{this.props.month.month[0].label}</Month>
-          <MontDayContainer container justify="space-around" >
-            { dayContainerElements() }
+          <Month>{this.getMonth(this.props.month.month[0])}</Month>
+          <MontDayContainer container justify="space-around">
+            {dayContainerElements()}
           </MontDayContainer>
           <DayDetail hidden={!this.state.showDayDetail}>
-            <FormattedMessage id="text.description" />
+            <FormattedMessage id="text.description"/>
             {' '}
             {this.state.clickedDay ? `${MonthElement.getDateAsString(this.state.clickedDay.day)} ${this.state.clickedDay.description}` : ''}
           </DayDetail>
