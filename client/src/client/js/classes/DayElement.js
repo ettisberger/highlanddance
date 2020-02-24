@@ -15,9 +15,22 @@ const DayElementContainer = styled.div`
   color: ${whiteColor};
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &:hover {
     background-color: ${brandPrimary};
+  }
+  
+  &.special:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent deeppink transparent transparent;
+    right: 0;
+    top: 0;
+    position: absolute;
   }
 `;
 
@@ -44,7 +57,7 @@ class DayElement extends Component {
 
     return (
       <Grid item>
-        <DayElementContainer onClick={this.props.onClick}>
+        <DayElementContainer onClick={this.props.onClick} className={this.props.hasSpecialNote ? "special" : ""}>
           <Month>{dayOfWeek}</Month>
           <Day>{day}</Day>
         </DayElementContainer>

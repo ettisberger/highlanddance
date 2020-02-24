@@ -19,6 +19,7 @@ class DaysElement extends Component {
             day={new Date(day.day)}
             key={index}
             onClick={() => this.props.clickedDay(day)}
+            hasSpecialNote={day.description !== ""}
           />
         )}
       </Grid>

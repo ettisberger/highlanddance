@@ -57,7 +57,7 @@ class MonthElement extends Component {
   }
 
   getMonth = (month) => {
-    const dynamicProps = { id: `months.${month.value}`};
+    const dynamicProps = { id: `months.${month.value}` };
 
     return (<FormattedMessage {...dynamicProps}/>);
   };
@@ -74,7 +74,8 @@ class MonthElement extends Component {
         elements.push(<DaysElement month={this.props.month}
                                    days={value}
                                    key={key}
-                                   clickedDay={this.clickedDay}/>);
+                                   clickedDay={this.clickedDay}
+                                   />);
       })
 
       return elements;
