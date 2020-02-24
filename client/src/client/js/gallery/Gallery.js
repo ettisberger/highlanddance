@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_3.jpg';
-import * as WordpressService from '../common/wordpressService';
-import { Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 import GridGallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 import ReactPlayer from 'react-player';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
+import { Inlay, LoadingPlaceholder, Section } from '../theme';
+import * as WordpressService from '../common/wordpressService';
+import pageHeaderImage from '../../assets/images/header_background_3.jpg';
+import PageHeader from '../layout/header/PageHeader';
 
 const PlayerContainer = styled.div`
   &:first-of-type {
@@ -30,11 +30,9 @@ const VideoPlayer = styled(ReactPlayer)`
   height: 100%;
 `;
 
-const mapStateToProps = function (state) {
-  return {
-    language: state.language,
-  };
-};
+const mapStateToProps = state => ({
+  language: state.language,
+});
 
 class Gallery extends Component {
   constructor(props) {
@@ -96,7 +94,7 @@ class Gallery extends Component {
     const photos = this.state.galleryEntries.map(image => ({
       src: image.url,
       width: image.width,
-      height: image.height
+      height: image.height,
     }));
 
     if (this.state.loading) {
@@ -104,15 +102,17 @@ class Gallery extends Component {
         <React.Fragment>
           <Helmet>
             <title>Gallerie</title>
-            <meta name="Galerie - Highland Dancing Basel"
-                  content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen."/>
+            <meta
+              name="Galerie - Highland Dancing Basel"
+              content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen."
+            />
           </Helmet>
           <FormattedMessage id="navigation.gallery">
             {title => (
-              <PageHeader imageUrl={pageHeaderImage} title={title}/>
+              <PageHeader imageUrl={pageHeaderImage} title={title} />
             )}
           </FormattedMessage>
-          <LoadingPlaceholder/>
+          <LoadingPlaceholder />
         </React.Fragment>
       );
     }
@@ -120,17 +120,19 @@ class Gallery extends Component {
       <React.Fragment>
         <Helmet>
           <title>Partner</title>
-          <meta name="Galerie - Highland Dancing Basel"
-                content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen."/>
+          <meta
+            name="Galerie - Highland Dancing Basel"
+            content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen."
+          />
         </Helmet>
         <FormattedMessage id="navigation.gallery">
           {title => (
-            <PageHeader imageUrl={pageHeaderImage} title={title}/>
+            <PageHeader imageUrl={pageHeaderImage} title={title} />
           )}
         </FormattedMessage>
         <Section even>
           <Inlay>
-            <GridGallery photos={photos} onClick={this.openLightbox}/>
+            <GridGallery photos={photos} onClick={this.openLightbox} />
             <Lightbox
               images={photos}
               onClose={this.closeLightbox}
@@ -143,16 +145,17 @@ class Gallery extends Component {
         </Section>
         <Section odd>
           <Inlay>
-            <Grid container wrap direction='row' spacing={6}>
-              {this.state.videoEntries.map((videoEntry, index) =>
-                <Grid item xs={12} sm={6} >
-                  <PlayerContainer key={videoEntry.video_id}>
-                    <VideoPlayer className="react-player"
-                                 url={videoEntry.video}
-                                 controls
-                                 width="100%"
-                                 height="100%"
-                                 key={videoEntry.video_id}/>
+            <Grid container wrap direction="row" spacing={6}>
+              {this.state.videoEntries.map(videoEntry =>
+                <Grid item xs={12} sm={6} key={videoEntry.video_id}>
+                  <PlayerContainer>
+                    <VideoPlayer
+                      className="react-player"
+                      url={videoEntry.video}
+                      controls
+                      width="100%"
+                      height="100%"
+                    />
                   </PlayerContainer>
                 </Grid>
               )}
