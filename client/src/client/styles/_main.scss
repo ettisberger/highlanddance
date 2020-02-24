@@ -10,6 +10,25 @@ html, body {
   overflow-x: hidden;
 }
 
+p > img {
+  display: flex;
+
+  &.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.alignleft {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &.alignright {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 img {
   border: none;
   max-width: 100%;
