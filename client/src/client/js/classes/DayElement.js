@@ -26,7 +26,7 @@ const DayElementContainer = styled.div`
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 30px 30px 0;
+    border-width: 0 22px 22px 0;
     border-color: transparent deeppink transparent transparent;
     right: 0;
     top: 0;
