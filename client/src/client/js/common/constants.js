@@ -5,3 +5,4 @@ export const CONTACT_TITLE = 'Highland Dancing Basel';
 export const CONTACT_MAIL = 'info@highlanddance.ch';
 export const CONTACT_WEB = 'http://www.highlanddance.ch';
 export const CONTACT_FACEBOOK = 'https://www.facebook.com/Highland-Dancing-Basel-113072982095493/';
+export const CONTACT_INSTAGRAM = 'https://www.instagram.com/highlanddancebasel';
