@@ -29,3 +29,6 @@ export async function loadPartner(language) {
 export async function loadGallery(language) {
   return axios.get(`${BASE_URL + language + API_URL}gallery`);
 }
+export async function loadVideos(language) {
+  return axios.get(`${BASE_URL + language + API_URL}videos`);
+}

@@ -32,7 +32,7 @@ class About extends Component {
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ loading: true });
 
     WordpressService.loadAbout(this.props.language).then((response) => {
@@ -41,9 +41,6 @@ class About extends Component {
         loading: false,
       });
     });
-  }
-
-  componentWillUnmount() {
   }
 
   render() {

@@ -31,8 +31,7 @@ class HighlandHustle extends Component {
     this.state = { highlandHustleEntries: [], loading: false };
   }
 
-
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ loading: true });
 
     WordpressService.loadHighlandHustle(this.props.language).then((response) => {
@@ -41,9 +40,6 @@ class HighlandHustle extends Component {
         loading: false,
       });
     });
-  }
-
-  componentWillUnmount() {
   }
 
   render() {
