@@ -14,7 +14,8 @@ import { GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-map
 import styled from 'styled-components';
 
 const Studio = styled.p`
-  margin-bottom: 2rem;
+  margin-bottom: 10px !important;
+  line-height: 1.5;
 `;
 
 const mapStateToProps = function (state) {
@@ -118,13 +119,13 @@ class Contact extends Component {
             <SectionTitle>
               <FormattedMessage id="navigation.contact"/>
             </SectionTitle>
-            <h2>
-              Studio
-            </h2>
             <Studio>
-              Carol Jones
-              Holbeinplatz 7
-              CH-4051 Basel
+              <h3>
+                Studio
+              </h3>
+              <div>Carol Jones</div>
+              <div>Holbeinplatz 7</div>
+              <div>CH-4051 Basel</div>
             </Studio>
             <MyMapComponent
               isMarkerShown
