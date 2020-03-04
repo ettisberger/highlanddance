@@ -6,7 +6,16 @@
     "classes": "STUNDEN",
     "teacher": "TANZLEHRERIN",
     "gallery": "GALERIE",
-    "contact": "KONTAKT"
+    "contact": "KONTAKT",
+    "lc" : {
+      "home": "Home",
+      "about": "Über uns",
+      "hustle" : "Highland Hustle",
+      "classes": "Stunden",
+      "teacher": "Tanzlehrerin",
+      "gallery": "Galerie",
+      "contact": "Kontakt"
+    }
   },
   "text" : {
     "description" : "Bemerkung",

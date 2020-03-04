@@ -105,7 +105,7 @@ const LinkButton = styled(Link)`
   ${StyledButton};
 `;
 
-const ContactButton = styled.a`
+const ContactButton = styled(Link)`
   ${StyledButton};
 `;
 
@@ -128,7 +128,7 @@ class PageHeader extends Component {
                     calendar_today
                   </i>
                 </LinkButton>
-                <ContactButton href={`mailto:${CONTACT_MAIL}`}>
+                <ContactButton to="contact">
                   <FormattedMessage id="navigation.contact"/>
                   <i className="material-icons">
                     contact_mail

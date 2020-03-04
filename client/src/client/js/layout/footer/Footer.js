@@ -87,7 +87,14 @@ const SocialIcons = styled.div`
     display: inline; 
     padding: 0 10px 0 0;   
   }
-`
+`;
+
+const Links = styled.div`
+  a {
+    display: block; 
+    color: white;
+  }
+`;
 
 class Footer extends Component {
   render() {
@@ -115,9 +122,16 @@ class Footer extends Component {
                   <FooterTitle>
                     <FormattedMessage id="text.compass"/>
                   </FooterTitle>
+                  <Links>
+                    <Link to=""><FormattedMessage id="navigation.lc.home"/></Link>
+                    <Link to="about"><FormattedMessage id="navigation.lc.about"/></Link>
+                    <Link to="hustle"><FormattedMessage id="navigation.lc.hustle"/></Link>
+                    <Link to="classes"><FormattedMessage id="navigation.lc.classes"/></Link>
+                    <Link to="teacher"><FormattedMessage id="navigation.lc.teacher"/></Link>
+                    <Link to="gallery"><FormattedMessage id="navigation.lc.gallery"/></Link>
+                    <Link to="contact"><FormattedMessage id="navigation.lc.contact"/></Link>
+                  </Links>
 
-                  <Link to=""><FormattedMessage id="navigation.home"/></Link>
-                    <Link to="about"><FormattedMessage id="navigation.about"/></Link>
                 </FooterItem>
                 <FooterItem container item xs={12} sm={4} direction="column">
                   <FooterTitle>

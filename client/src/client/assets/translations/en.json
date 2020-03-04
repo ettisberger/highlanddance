@@ -6,7 +6,16 @@
     "classes": "CLASSES",
     "teacher": "TEACHER",
     "gallery": "GALLERY",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "lc" : {
+      "home": "Home",
+      "about": "About",
+      "hustle" : "Highland Hustle",
+      "classes": "Classes",
+      "teacher": "Teacher",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    }
   },
   "text" : {
     "description" : "Description",
