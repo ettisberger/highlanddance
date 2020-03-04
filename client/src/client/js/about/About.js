@@ -7,7 +7,7 @@ import * as PropTypes from 'prop-types';
 import { brandPrimary, Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 
 import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_6.jpg';
+import pageHeaderImage from '../../assets/images/header_background_about.jpg';
 import * as WordpressService from '../common/wordpressService';
 
 const Text = styled.p`

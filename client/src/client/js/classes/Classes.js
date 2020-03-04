@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import * as PropTypes from 'prop-types';
 import { brandPrimary, Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_3.jpg';
+import pageHeaderImage from '../../assets/images/header_background_classes.jpg';
 import * as WordpressService from '../common/wordpressService';
 import MonthElement from './MonthElement';
 

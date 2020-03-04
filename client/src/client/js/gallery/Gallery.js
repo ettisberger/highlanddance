@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import { Inlay, LoadingPlaceholder, Section } from '../theme';
 import * as WordpressService from '../common/wordpressService';
-import pageHeaderImage from '../../assets/images/header_background_3.jpg';
+import pageHeaderImage from '../../assets/images/header_background_gallery.jpg';
 import PageHeader from '../layout/header/PageHeader';
 
 const PlayerContainer = styled.div`

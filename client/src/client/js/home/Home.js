@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { brandPrimary, Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_5.jpg';
+import pageHeaderImage from '../../assets/images/header_background_home.jpg';
 import * as WordpressService from '../common/wordpressService';
 import * as PropTypes from 'prop-types';
 

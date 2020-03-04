@@ -11,6 +11,7 @@ import store from './reducers/store';
 import highlanddanceTheme from './theme';
 import App from './App';
 import LanguageProvider from './LanguageProvider';
+import ScrollToTop from './common/ScrollToTop';
 
 // init localization
 addLocaleData([...de, ...en]);
@@ -21,7 +22,9 @@ const renderApp = () => {
       <Provider store={store}>
         <LanguageProvider>
           <Router>
-            <App />
+            <ScrollToTop>
+              <App/>
+            </ScrollToTop>
           </Router>
         </LanguageProvider>
       </Provider>

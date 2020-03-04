@@ -8,12 +8,12 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 import PageHeader from '../layout/header/PageHeader';
-import pageHeaderImage from '../../assets/images/header_background_3.jpg';
+import pageHeaderImage from '../../assets/images/header_background_contact.jpg';
 import * as WordpressService from '../common/wordpressService';
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
 import styled from 'styled-components';
 
-const Studio = styled.p`
+const Studio = styled.div`
   margin-bottom: 10px !important;
   line-height: 1.5;
 `;
@@ -120,10 +120,7 @@ class Contact extends Component {
               <FormattedMessage id="navigation.contact"/>
             </SectionTitle>
             <Studio>
-              <h3>
-                Studio
-              </h3>
-              <div>Carol Jones</div>
+              <div>Studio Highlanddance Basel</div>
               <div>Holbeinplatz 7</div>
               <div>CH-4051 Basel</div>
             </Studio>
@@ -140,7 +137,7 @@ class Contact extends Component {
         <Section odd>
           <Inlay>
             <form noValidate autoComplete="on">
-              <Grid container spacing={24} justify="center">
+              <Grid container spacing={2} justify="center">
                 <Grid container item xs={12} sm={12} justify="center">
                   <TextField
                     id="name"

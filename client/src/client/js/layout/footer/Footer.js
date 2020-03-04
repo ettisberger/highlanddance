@@ -11,6 +11,9 @@ import {
   CONTACT_WEB
 } from '../../common/constants';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
+import About from '../../about/About';
+import ScrollToTopRoute from '../../common/ScrollToTop';
 
 const FooterWrapper = styled.div`
   position: absolute;
@@ -112,9 +115,9 @@ class Footer extends Component {
                   <FooterTitle>
                     <FormattedMessage id="text.compass"/>
                   </FooterTitle>
-                  <p>
-                    {CONTACT_TITLE}
-                  </p>
+
+                  <Link to=""><FormattedMessage id="navigation.home"/></Link>
+                    <Link to="about"><FormattedMessage id="navigation.about"/></Link>
                 </FooterItem>
                 <FooterItem container item xs={12} sm={4} direction="column">
                   <FooterTitle>
