@@ -29,6 +29,11 @@ export async function loadPartner(language) {
 export async function loadGallery(language) {
   return axios.get(`${BASE_URL + language + API_URL}gallery`);
 }
+
 export async function loadVideos(language) {
   return axios.get(`${BASE_URL + language + API_URL}videos`);
+}
+
+export async function sendMail(name, firstname, email, text) {
+  return axios.post(`${BASE_URL + API_URL}mail`, { name, firstname, email, text });
 }

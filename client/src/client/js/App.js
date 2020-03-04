@@ -12,6 +12,7 @@ import Teacher from './teacher/Teacher';
 import Classes from './classes/Classes';
 import Gallery from './gallery/Gallery';
 import HighlandHustle from './hustle/HighlandHustle';
+import Contact from './contact/Contact';
 
 const Main = styled.main`    
   position: absolute;
@@ -34,6 +35,7 @@ class App extends React.Component {
           <Route name="classes" exact path="/classes" component={Classes} />
           <Route name="teacher" exact path="/teacher" component={Teacher} />
           <Route name="gallery" exact path="/gallery" component={Gallery} />
+          <Route name="contact" exact path="/contact" component={Contact} />
           {/* footer inside of the main container because footers are bitches and dont behave */}
           <Footer />
         </Main>

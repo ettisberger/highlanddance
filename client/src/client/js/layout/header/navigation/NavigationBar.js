@@ -7,7 +7,7 @@ import { whiteColor } from '../../../theme';
 
 const NavItem = styled.div`
   color: ${whiteColor};
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 
   && {
@@ -48,23 +48,26 @@ class NavigationBar extends Component {
   render() {
     return (
       <Grid component="nav" container item xs={10} justify="flex-end" alignItems="center">
-        <Grid item xs={2}>
+        <Grid item xs>
           <NavItem><Link to=""><FormattedMessage id="navigation.home" /></Link></NavItem>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs>
           <NavItem><Link to="about"><FormattedMessage id="navigation.about" /></Link></NavItem>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs>
           <NavItem><Link to="hustle"><FormattedMessage id="navigation.hustle" /></Link></NavItem>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs>
           <NavItem><Link to="classes"><FormattedMessage id="navigation.classes" /></Link></NavItem>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs>
           <NavItem><Link to="teacher"><FormattedMessage id="navigation.teacher" /></Link></NavItem>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs>
           <NavItem><Link to="gallery"><FormattedMessage id="navigation.gallery" /></Link></NavItem>
+        </Grid>
+        <Grid item xs>
+          <NavItem><Link to="contact"><FormattedMessage id="navigation.contact" /></Link></NavItem>
         </Grid>
       </Grid>
     );

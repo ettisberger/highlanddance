@@ -79,7 +79,7 @@ const Navigation = styled.nav`
     }
     
     .menu-btn:checked ~ .menu {
-      max-height: 360px;
+      max-height: 400px;
     }
     
     .menu-btn:checked ~ .menu-icon .navicon {
@@ -186,6 +186,14 @@ class MobileNavigationBar extends Component {
               onClick={this.clickedItem}
             >
               <FormattedMessage id="navigation.gallery" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="contact"
+              onClick={this.clickedItem}
+            >
+              <FormattedMessage id="navigation.contact" />
             </Link>
           </li>
         </ul>

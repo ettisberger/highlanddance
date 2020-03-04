@@ -119,7 +119,7 @@ class Gallery extends Component {
     return (
       <React.Fragment>
         <Helmet>
-          <title>Partner</title>
+          <title>Gallerie</title>
           <meta
             name="Galerie - Highland Dancing Basel"
             content="Dies ist die Galerie von Highland Dancing Basel. Hier können Sie verschiedene Eindrücke von unseren diversen Auftritten gewinnen."
