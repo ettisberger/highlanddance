@@ -47,18 +47,18 @@ class Gallery extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: true });
+    this.setState({ galleryEntries: [], videoEntries: [], loading: true });
 
     WordpressService.loadGallery(this.props.language).then((response) => {
       this.setState({
-        galleryEntries: response.data,
+        galleryEntries: !Object.keys(response.data).length ? [] : response.data,
         loading: false,
       });
     });
 
     WordpressService.loadVideos(this.props.language).then((response) => {
       this.setState({
-        videoEntries: response.data,
+        videoEntries: !Object.keys(response.data).length ? [] : response.data,
         loading: false,
       });
     });
@@ -109,10 +109,10 @@ class Gallery extends Component {
           </Helmet>
           <FormattedMessage id="navigation.gallery">
             {title => (
-              <PageHeader imageUrl={pageHeaderImage} title={title} />
+              <PageHeader imageUrl={pageHeaderImage} title={title}/>
             )}
           </FormattedMessage>
-          <LoadingPlaceholder />
+          <LoadingPlaceholder/>
         </React.Fragment>
       );
     }
@@ -127,12 +127,12 @@ class Gallery extends Component {
         </Helmet>
         <FormattedMessage id="navigation.gallery">
           {title => (
-            <PageHeader imageUrl={pageHeaderImage} title={title} />
+            <PageHeader imageUrl={pageHeaderImage} title={title}/>
           )}
         </FormattedMessage>
         <Section even>
           <Inlay>
-            <GridGallery photos={photos} onClick={this.openLightbox} />
+            <GridGallery photos={photos} onClick={this.openLightbox}/>
             <Lightbox
               images={photos}
               onClose={this.closeLightbox}
@@ -143,25 +143,28 @@ class Gallery extends Component {
             />
           </Inlay>
         </Section>
-        <Section odd>
-          <Inlay>
-            <Grid container wrap direction="row" spacing={6}>
-              {this.state.videoEntries.map(videoEntry =>
-                <Grid item xs={12} sm={6} key={videoEntry.video_id}>
-                  <PlayerContainer>
-                    <VideoPlayer
-                      className="react-player"
-                      url={videoEntry.video}
-                      controls
-                      width="100%"
-                      height="100%"
-                    />
-                  </PlayerContainer>
+
+        {this.state.videoEntries.length ? (
+            <Section odd>
+              <Inlay>
+                <Grid container wrap direction="row" spacing={6}>
+                  {this.state.videoEntries.map(videoEntry =>
+                    <Grid item xs={12} sm={6} key={videoEntry.video_id}>
+                      <PlayerContainer>
+                        <VideoPlayer
+                          className="react-player"
+                          url={videoEntry.video}
+                          controls
+                          width="100%"
+                          height="100%"
+                        />
+                      </PlayerContainer>
+                    </Grid>
+                  )}
                 </Grid>
-              )}
-            </Grid>
-          </Inlay>
-        </Section>
+              </Inlay>
+            </Section>)
+          : null}
       </React.Fragment>
     );
   }
