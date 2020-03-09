@@ -69,6 +69,10 @@ const FooterBackground = styled.div`
     position: relative;
     width: 100%;
     height: 700px;
+    
+    ${theme.breakpoints.down('sm')}{
+      height: 800px;
+    }
   }
   
   #facebook {

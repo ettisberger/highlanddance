@@ -42,6 +42,10 @@ const LanguageBar = styled.div`
     a {
       color: ${whiteColor};
     }
+    
+    ${theme.breakpoints.down('sm')}{
+      top: 50px;
+    }
 `;
 
 const Logo = styled.img`
@@ -71,7 +75,24 @@ class Header extends Component {
     return (
       <React.Fragment>
         <Hidden smUp>
-          <MobileNavigationBar />
+          <MobileNavigationBar/>
+          <LanguageBar>
+            <a
+              href="#"
+              style={this.props.language === 'de' ? { fontWeight: 'bold' } : {}}
+              onClick={() => this.props.changeLanguage('de')}
+            >
+              deutsch
+            </a>
+            <span> | </span>
+            <a
+              href="#"
+              style={this.props.language === 'en' ? { fontWeight: 'bold' } : {}}
+              onClick={() => this.props.changeLanguage('en')}
+            >
+              english
+            </a>
+          </LanguageBar>
         </Hidden>
         <Hidden xsDown>
           <HeaderBar>
@@ -94,9 +115,9 @@ class Header extends Component {
             </LanguageBar>
             <Grid container spacing={8}>
               <Grid item xs={2}>
-                <Link to=""><Logo src="/assets/images/logo_header.png" /></Link>
+                <Link to=""><Logo src="/assets/images/logo_header.png"/></Link>
               </Grid>
-              <NavigationBar />
+              <NavigationBar/>
             </Grid>
           </HeaderBar>
         </Hidden>
