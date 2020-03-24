@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import * as PropTypes from 'prop-types';
-import { brandPrimary, Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
+import theme, { brandPrimary, Inlay, LoadingPlaceholder, Section, SectionTitle } from '../theme';
 
 import PageHeader from '../layout/header/PageHeader';
 import pageHeaderImage from '../../assets/images/header_background_teacher.jpg';
@@ -15,6 +15,23 @@ const Text = styled.p`
   
   a {
     color: ${brandPrimary};
+  }
+  
+  img {
+  
+    &.floatright {
+      ${theme.breakpoints.up('sm')}{
+        float: right;
+        margin: 2rem;
+      }
+    }
+    
+    &.floatleft {
+      ${theme.breakpoints.up('sm')}{
+        float: left;
+        margin: 2rem;
+      }
+    }
   }
 `;
 
@@ -37,7 +54,7 @@ class Teacher extends Component {
 
     WordpressService.loadTeacher(this.props.language).then((response) => {
       this.setState({
-        teacherEntries: response.data,
+        teacherEntries: !Object.keys(response.data).length ? [] : response.data,
         loading: false,
       });
     });
@@ -48,7 +65,7 @@ class Teacher extends Component {
       return (
         <React.Fragment>
           <Helmet>
-            <title>Home</title>
+            <title>Teacher</title>
             <meta name="Tanzlehrerin - Highland Dancing Basel" content="Carol ist Mitgliederin der Scottish Dance Teachers‘ Association, einer von drei Vereinen, der vom Scottish Official Board of Highland Dancing anerkannt ist." />
           </Helmet>
           <FormattedMessage id="navigation.teacher">

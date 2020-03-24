@@ -35,5 +35,8 @@
     "oct" : "October",
     "nov" : "November",
     "dec" : "December"
+  },
+  "error" : {
+    "NO_CLASSES" : "No classes at the moment."
   }
 }

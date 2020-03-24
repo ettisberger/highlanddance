@@ -35,5 +35,8 @@
     "oct" : "Oktober",
     "nov" : "November",
     "dec" : "Dezember"
+  },
+  "error" : {
+    "NO_CLASSES" : "Momentan sind keine Stunden erfasst."
   }
 }
