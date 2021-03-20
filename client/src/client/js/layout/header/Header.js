@@ -45,6 +45,9 @@ const LanguageBar = styled.div`
     
     ${theme.breakpoints.down('sm')}{
       top: 50px;
+      display: inline;
+      float: right;
+      width: auto;
     }
 `;
 

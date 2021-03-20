@@ -128,7 +128,8 @@ class MobileNavigationBar extends Component {
   render() {
     return (
       <Navigation checked={this.state.checked}>
-        <Link to=""><Logo src="/assets/images/logo_header.png" /></Link>
+        <Link to="/"
+              onClick={this.clickedItem}><Logo src="/assets/images/logo_header.png"/></Link>
         <input
           className="menu-btn"
           type="checkbox"
@@ -137,7 +138,7 @@ class MobileNavigationBar extends Component {
           onChange={this.clickedItem}
         />
         <label className="menu-icon" htmlFor="menu-btn">
-          <span className="navicon" />
+          <span className="navicon"/>
         </label>
         <ul className="menu">
           <li>
@@ -145,7 +146,7 @@ class MobileNavigationBar extends Component {
               to="/"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.home" />
+              <FormattedMessage id="navigation.home"/>
             </Link>
           </li>
           <li>
@@ -153,7 +154,7 @@ class MobileNavigationBar extends Component {
               to="about"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.about" />
+              <FormattedMessage id="navigation.about"/>
             </Link>
           </li>
           <li>
@@ -161,7 +162,7 @@ class MobileNavigationBar extends Component {
               to="hustle"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.hustle" />
+              <FormattedMessage id="navigation.hustle"/>
             </Link>
           </li>
           <li>
@@ -169,7 +170,7 @@ class MobileNavigationBar extends Component {
               to="classes"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.classes" />
+              <FormattedMessage id="navigation.classes"/>
             </Link>
           </li>
           <li>
@@ -177,7 +178,7 @@ class MobileNavigationBar extends Component {
               to="teacher"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.teacher" />
+              <FormattedMessage id="navigation.teacher"/>
             </Link>
           </li>
           <li>
@@ -185,7 +186,7 @@ class MobileNavigationBar extends Component {
               to="gallery"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.gallery" />
+              <FormattedMessage id="navigation.gallery"/>
             </Link>
           </li>
           <li>
@@ -193,7 +194,7 @@ class MobileNavigationBar extends Component {
               to="contact"
               onClick={this.clickedItem}
             >
-              <FormattedMessage id="navigation.contact" />
+              <FormattedMessage id="navigation.contact"/>
             </Link>
           </li>
         </ul>

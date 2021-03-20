@@ -66,9 +66,9 @@ class Contact extends Component {
           clickableIcons={false}
           options={{ disableDefaultUI: true, draggable: false }}
           defaultZoom={15}
-          defaultCenter={{ lat: 47.5553325, lng: 7.5840988 }}
+          defaultCenter={{ lat: 47.53724893750821, lng: 7.607319536119592 }}
         >
-          <Marker position={{ lat: 47.5553325, lng: 7.5840988 }}/>
+          <Marker position={{ lat: 47.53724893750821, lng: 7.607319536119592 }}/>
         </GoogleMap>
       ))
     ;
@@ -120,9 +120,9 @@ class Contact extends Component {
               <FormattedMessage id="navigation.contact"/>
             </SectionTitle>
             <Studio>
-              <div>Studio Highlanddance Basel</div>
-              <div>Holbeinplatz 7</div>
-              <div>CH-4051 Basel</div>
+              <div>Highland Dancing Basel</div>
+              <div>Leimgrubenweg 4-6</div>
+              <div>CH-4053 Basel</div>
             </Studio>
             <MyMapComponent
               isMarkerShown
