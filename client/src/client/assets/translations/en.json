@@ -1,0 +1,43 @@
+{
+  "navigation" : {
+    "home": "HOME",
+    "dancing": "HIGHLAND DANCING BASEL",
+    "hustle" : "HIGHLAND HUSTLE",
+    "classes": "CLASSES",
+    "teacher": "DANCE DIRECTOR",
+    "gallery": "GALLERY",
+    "studio": "STUDIO",
+    "lc" : {
+      "home": "Home",
+      "dancing": "About",
+      "hustle" : "Highland Hustle",
+      "classes": "Classes",
+      "teacher": "Dance Director",
+      "gallery": "Gallery",
+      "studio": "Studio"
+    }
+  },
+  "text" : {
+    "description" : "Description",
+    "compass" : "Compass",
+    "contact" : "Contact"
+  },
+  "months" : {
+    "jan" : "January",
+    "feb" : "February",
+    "mar" : "March",
+    "apr" : "April",
+    "may" : "May",
+    "jun" : "June",
+    "jul" : "July",
+    "aug" : "August",
+    "sep" : "September",
+    "oct" : "October",
+    "nov" : "November",
+    "dec" : "December"
+  },
+  "error" : {
+    "NO_CLASSES" : "No classes at the moment.",
+    "NO_DAY_SELECTED": "Please select a day to get more information."
+  }
+}

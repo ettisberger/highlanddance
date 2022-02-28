@@ -1,0 +1,9 @@
+## general
+.DS_Store
+.idea
+
+## client
+node_modules
+
+## server
+server

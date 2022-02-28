@@ -1,0 +1,10 @@
+DS_Store
+.idea/
+node_modules
+dist
+src/config/secret.config.json
+src/config/config.js
+yarn.lock
+package-lock.json
+Procfile
+.env.production

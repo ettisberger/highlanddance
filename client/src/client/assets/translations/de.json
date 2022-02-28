@@ -1,0 +1,43 @@
+{
+  "navigation" : {
+    "home": "HOME",
+    "dancing": "HIGHLAND DANCING BASEL",
+    "hustle" : "HIGHLAND HUSTLE",
+    "classes": "STUNDEN",
+    "teacher": "TANZDIREKTORIN",
+    "gallery": "GALERIE",
+    "studio": "STUDIO",
+    "lc" : {
+      "home": "Home",
+      "dancing": "Highland Dancing Basel",
+      "hustle" : "Highland Hustle",
+      "classes": "Stunden",
+      "teacher": "Tanzdirektorin",
+      "gallery": "Galerie",
+      "studio": "Studio"
+    }
+  },
+  "text" : {
+    "description" : "Bemerkung",
+    "compass" : "Kompass",
+    "contact" : "Kontakt"
+  },
+  "months" : {
+    "jan" : "Januar",
+    "feb" : "Februar",
+    "mar" : "März",
+    "apr" : "April",
+    "may" : "Mai",
+    "jun" : "Juni",
+    "jul" : "Juli",
+    "aug" : "August",
+    "sep" : "September",
+    "oct" : "Oktober",
+    "nov" : "November",
+    "dec" : "Dezember"
+  },
+  "error" : {
+    "NO_CLASSES" : "Momentan sind keine Stunden erfasst.",
+    "NO_DAY_SELECTED": "Bitte klicken Sie einen Tag an, um mehr Information zu erhalten."
+  }
+}

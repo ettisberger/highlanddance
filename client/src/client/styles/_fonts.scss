@@ -1,0 +1,43 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+h1, %aet-heading-1 {
+  font-size: 2.25rem;
+}
+
+h2, %aet-heading-2 {
+  font-size: 2.0rem;
+}
+
+h3, %aet-heading-3 {
+  font-size: 1.50rem;
+}
+
+h4, %aet-heading-4 {
+  font-size: 1.30rem;
+}
+
+h5, %aet-heading-5 {
+  font-size: 1.0rem;
+}
+
+h1, h2, h3, h4, h5, %aet-heading-1, %aet-heading-2, %aet-heading-3, %aet-heading-4, %aet-heading-5 {
+  margin-top: 1.20em;
+  margin-bottom: 0.80em;
+  line-height: 1.30em;
+}
+
+h1 {
+  font-weight: 400;
+}
